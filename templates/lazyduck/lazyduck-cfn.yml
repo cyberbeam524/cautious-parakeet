@@ -1,0 +1,705 @@
+AWSTemplateFormatVersion: 2010-09-09
+Mappings:
+  SubnetConfig:
+    VPC:
+      CIDR: '10.0.0.0/16'
+    PublicOne:
+      CIDR: '10.0.0.0/24'
+    PrivateSubnetMSKOne:
+      CIDR: '10.0.1.0/24'
+    PrivateSubnetMSKTwo:
+      CIDR: '10.0.2.0/24'
+    PrivateSubnetMSKThree:
+      CIDR: '10.0.3.0/24'
+
+Resources:
+###
+### S3 Bucket
+###
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Delete
+    Properties:
+      BucketName: !Join
+        - "-"
+        - - "lazyduck-msf-msk-kds"
+          - !Select
+            - 0
+            - !Split
+              - "-"
+              - !Select
+                - 2
+                - !Split
+                  - "/"
+                  - !Ref "AWS::StackId"
+
+###
+### GLUE
+###
+  MSFStudioGlueDatabase:
+    Type: AWS::Glue::Database
+    Properties:
+      CatalogId: !Ref AWS::AccountId
+      DatabaseInput:
+        Name: msfstudio
+        Description: Glue database for MSF Studio
+###
+### VPC
+###
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      CidrBlock: !FindInMap ['SubnetConfig', 'VPC', 'CIDR']
+      Tags:
+        - Key: 'Name'
+          Value: 'MSKMSFStudioVPC'
+
+  PublicSubnetOne:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone:
+        Fn::Select:
+          - 0
+          - Fn::GetAZs: {Ref: 'AWS::Region'}
+      VpcId: !Ref 'VPC'
+      CidrBlock: !FindInMap ['SubnetConfig', 'PublicOne', 'CIDR']
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: 'Name'
+          Value: 'PublicSubnet'
+  PrivateSubnetMSKOne:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone:
+        Fn::Select:
+          - 0
+          - Fn::GetAZs: {Ref: 'AWS::Region'}
+      VpcId: !Ref 'VPC'
+      CidrBlock: !FindInMap ['SubnetConfig', 'PrivateSubnetMSKOne', 'CIDR']
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: 'Name'
+          Value: 'PrivateSubnetMSKOne'
+  PrivateSubnetMSKTwo:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone:
+        Fn::Select:
+          - 1
+          - Fn::GetAZs: {Ref: 'AWS::Region'}
+      VpcId: !Ref 'VPC'
+      CidrBlock: !FindInMap ['SubnetConfig', 'PrivateSubnetMSKTwo', 'CIDR']
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: 'Name'
+          Value: 'PrivateSubnetMSKTwo'
+  PrivateSubnetMSKThree:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone:
+        Fn::Select:
+          - 2
+          - Fn::GetAZs: {Ref: 'AWS::Region'}
+      VpcId: !Ref 'VPC'
+      CidrBlock: !FindInMap ['SubnetConfig', 'PrivateSubnetMSKThree', 'CIDR']
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: 'Name'
+          Value: 'PrivateSubnetMSKThree'
+
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+  GatewayAttachement:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref 'VPC'
+      InternetGatewayId: !Ref 'InternetGateway'
+
+  NATEIP:
+    Type: AWS::EC2::EIP
+    DependsOn: GatewayAttachement
+    Properties:
+      Domain: vpc
+
+  NATGateway:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId: !GetAtt NATEIP.AllocationId
+      SubnetId: !Ref 'PublicSubnetOne'
+      Tags:
+        - Key: 'Name'
+          Value: 'MSKMSFStudioNATGateway'
+
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref 'VPC'
+  PublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: [GatewayAttachement, InternetGateway]
+    Properties:
+      RouteTableId: !Ref 'PublicRouteTable'
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: !Ref 'InternetGateway'
+  PublicSubnetOneRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnetOne
+      RouteTableId: !Ref PublicRouteTable
+
+  PrivateRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref 'VPC'
+
+  PrivateRoute:
+    Type: AWS::EC2::Route
+    DependsOn: NATGateway
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId: !Ref 'NATGateway'
+
+  PrivateSubnetMSKOneRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable
+      SubnetId: !Ref PrivateSubnetMSKOne
+  PrivateSubnetMSKTwoRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable
+      SubnetId: !Ref PrivateSubnetMSKTwo
+  PrivateSubnetMSKThreeRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable
+      SubnetId: !Ref PrivateSubnetMSKThree
+
+  KafkaClientInstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access via port 22 from BastionHostSecurityGroup
+      VpcId: !Ref 'VPC'
+      SecurityGroupIngress:
+      - IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+        CidrIp: 10.0.0.0/24
+    DependsOn: [PrivateRouteTable, PrivateSubnetMSKOne, PrivateSubnetMSKTwo, PrivateSubnetMSKThree, PublicSubnetOne]
+
+  MSKWorkshopKafkaServiceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: MSKWorkshop-KafkaService
+      GroupDescription: Access to the Kafka service on the MSK cluster
+      VpcId: !Ref 'VPC'
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          Description: Encrypted Kafka via 9098
+          FromPort: 9098
+          ToPort: 9098
+          SourceSecurityGroupId: !GetAtt KafkaClientInstanceSecurityGroup.GroupId
+        - IpProtocol: tcp
+          Description: Encrypted Kafka
+          FromPort: 9096
+          ToPort: 9096
+          SourceSecurityGroupId: !GetAtt KafkaClientInstanceSecurityGroup.GroupId
+        - IpProtocol: tcp
+          Description: Zookeeper access
+          FromPort: 2181
+          ToPort: 2181
+          SourceSecurityGroupId: !GetAtt KafkaClientInstanceSecurityGroup.GroupId
+    DependsOn: [PrivateRouteTable, PrivateSubnetMSKOne, PrivateSubnetMSKTwo, PrivateSubnetMSKThree, PublicSubnetOne]
+
+  KafkaPlaintextSecurityGroupIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    DependsOn: MSKWorkshopKafkaServiceSecurityGroup
+    Properties:
+      IpProtocol: tcp
+      GroupId: !Ref MSKWorkshopKafkaServiceSecurityGroup
+      SourceSecurityGroupId: !GetAtt MSKWorkshopKafkaServiceSecurityGroup.GroupId
+      Description: Plaintext Kafka
+      FromPort: 9092
+      ToPort: 9092
+
+  KafkaPlaintextSecurityGroupIngressA:
+    Type: AWS::EC2::SecurityGroupIngress
+    DependsOn: MSKWorkshopKafkaServiceSecurityGroup
+    Properties:
+      IpProtocol: -1
+      GroupId: !Ref MSKWorkshopKafkaServiceSecurityGroup
+      SourceSecurityGroupId: !GetAtt MSKWorkshopKafkaServiceSecurityGroup.GroupId
+      Description: All Traffic from SG
+
+  MSFStudioUserRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: MSFStudioUserRole
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: ''
+            Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: 'sts:AssumeRole'
+      Path: "/"
+      Policies:
+        - PolicyName: AllowAppAutoScaling
+          #Following is required for the TeamRole to access MSK Storage autoscaling in the console
+          PolicyDocument: {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Sid": "VisualEditor0",
+                "Effect": "Allow",
+                "Action": "application-autoscaling:*",
+                "Resource": "*"
+              }
+            ]
+          }
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonMSKFullAccess
+        - arn:aws:iam::aws:policy/AWSCloudFormationReadOnlyAccess
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+
+###
+### LAMBDA
+###
+  LambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: ''
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: 'sts:AssumeRole'
+      Description: Lambda Role that can create MSF Apps
+      Path: "/"
+      Policies:
+        - PolicyName: AllowCreateMSFApp
+          PolicyDocument: {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Action": "kinesisanalytics:*",
+                "Effect": "Allow",
+                "Resource": "*"
+              },
+              {
+                "Action": "iam:*",
+                "Effect": "Allow",
+                "Resource": "*"
+              },
+              {
+                "Action":"logs:*",
+                "Effect": "Allow",
+                "Resource": "*"
+              }
+            ]
+          }
+      RoleName: LamdaRoleForCreatingMSFApp
+
+  LambdaConsumer:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Sid: ''
+            Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: 'sts:AssumeRole'
+      Description: Lambda Role that can read from MSK
+      Path: "/"
+      Policies:
+        - PolicyName: AllowReadFromMSK
+          PolicyDocument: {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Action": [
+                      "kafka:Describe*",
+                      "kafka:List*",
+                      "kafka:Get*",
+                      "ec2:DescribeNetworkInterfaces",
+                      "ec2:CreateNetworkInterface",
+                      "ec2:DeleteNetworkInterface",
+                      "ec2:DescribeSecurityGroups",
+                      "ec2:DescribeSubnets",
+                      "ec2:DescribeVpcs",
+                      "kms:DescribeKey"
+                  ],
+                  "Effect": "Allow",
+                  "Resource": "*"
+                },
+                {
+                    "Effect": "Allow",
+                    "Action": "logs:CreateLogGroup",
+                    "Resource": "*"
+                },
+                {
+                    "Effect": "Allow",
+                    "Action": [
+                        "logs:CreateLogStream",
+                        "logs:PutLogEvents"
+                    ],
+                    "Resource": [
+                        "*"
+                    ]
+                },
+                {
+                    "Effect": "Allow",
+                    "Action": "sns:Publish",
+                    "Resource": "*"
+                },
+                {
+                "Effect": "Allow",
+                "Action": [
+                    "ec2:CreateNetworkInterface",
+                    "ec2:DescribeNetworkInterfaces",
+                    "ec2:DeleteNetworkInterface"
+                ],
+                "Resource": "*"
+                },
+                {
+                "Effect": "Allow",
+                "Action": [
+                    "kafka-cluster:DescribeTopicDynamicConfiguration",
+                    "kafka-cluster:DescribeCluster",
+                    "kafka-cluster:ReadData",
+                    "kafka-cluster:DescribeTopic",
+                    "kafka-cluster:DescribeTransactionalId",
+                    "kafka-cluster:DescribeGroup",
+                    "kafka-cluster:DescribeClusterDynamicConfiguration"
+                ],
+                "Resource": "*"
+                }
+
+              ]
+            }
+      RoleName: LambdaRoleForReadingFromMSK
+### start MSF studio role
+  MsfAppStartStopHandlerFunctionRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+          - PolicyName: VpcConfigurationPolicy
+            PolicyDocument:
+              Version: "2012-10-17"
+              Statement:
+                - Sid: VPCReadOnlyPermissions
+                  Effect: Allow
+                  Action:
+                    - ec2:DescribeVpcs
+                    - ec2:DescribeSubnets
+                    - ec2:DescribeSecurityGroups
+                    - ec2:DescribeDhcpOptions
+                  Resource: "*"
+                - Sid: ENIReadWritePermissions
+                  Effect: Allow
+                  Action:
+                    - ec2:CreateNetworkInterface
+                    - ec2:CreateNetworkInterfacePermission
+                    - ec2:DescribeNetworkInterfaces
+                    - ec2:DeleteNetworkInterface
+                  Resource: "*"
+                - Sid: MSFPermissions
+                  Effect: Allow
+                  Action:
+                    - kinesisanalytics:DescribeApplication
+                    - kinesisanalytics:StartApplication
+                    - kinesisanalytics:StopApplication
+                  Resource: "*"
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/CloudWatchFullAccess
+
+## end start MSF studio
+
+###
+### MSF STUDIO
+###
+  MSFStudioServiceExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: kinesisanalytics.amazonaws.com
+            Action: 'sts:AssumeRole'
+      Path: /
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonS3FullAccess
+        - arn:aws:iam::aws:policy/AmazonVPCFullAccess
+        - arn:aws:iam::aws:policy/AmazonKinesisAnalyticsFullAccess
+        - arn:aws:iam::aws:policy/AmazonSNSFullAccess
+        - arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
+        - arn:aws:iam::aws:policy/AmazonKinesisFullAccess
+        - arn:aws:iam::aws:policy/AmazonMSKFullAccess
+      Policies:
+        - PolicyName: glue-access
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - glue:*
+                Resource:
+                  - "*"
+              - Effect: Allow
+                Action:
+                  - glue:GetDatabase
+                Resource:
+                  - "*"
+        - PolicyName: Bedrock-access
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - bedrock:*
+                Resource:
+                  - "*"
+        - PolicyName: MSKIAM-access
+          PolicyDocument:
+            Version: 2012-10-17
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "kafka-cluster:Connect"
+                  - "kafka-cluster:AlterCluster"
+                  - "kafka-cluster:DescribeCluster"
+                  - "kafka-cluster:*Topic*"
+                  - "kafka-cluster:WriteData"
+                  - "kafka-cluster:ReadData"
+                  - "kafka-cluster:AlterGroup"
+                  - "kafka-cluster:DescribeGroup"
+                  - "sagemaker:InvokeEndpoint"
+                Resource:
+                  - "*"
+
+  MSKServerlessCluster:
+    Type: AWS::MSK::ServerlessCluster
+    Properties:
+      ClientAuthentication:
+        Sasl:
+          Iam:
+            Enabled: true
+      ClusterName: "lazyduckmsk"
+      VpcConfigs:
+        - SecurityGroups: [!Ref MSKWorkshopKafkaServiceSecurityGroup]
+          SubnetIds:
+            - !Ref PrivateSubnetMSKOne
+            - !Ref PrivateSubnetMSKTwo
+            - !Ref PrivateSubnetMSKThree
+
+  MSFStudioApp:
+    Type: AWS::KinesisAnalyticsV2::Application
+    Properties:
+      ApplicationName: "lazyduck-analytics"
+      ApplicationMode: INTERACTIVE
+      RuntimeEnvironment: ZEPPELIN-FLINK-3_0
+      ServiceExecutionRole: !GetAtt MSFStudioServiceExecutionRole.Arn
+      ApplicationConfiguration:
+        VpcConfigurations:
+          - SecurityGroupIds:
+              - !Ref MSKWorkshopKafkaServiceSecurityGroup
+            SubnetIds:
+              - !Ref PrivateSubnetMSKOne
+              - !Ref PrivateSubnetMSKTwo
+              - !Ref PrivateSubnetMSKThree
+        FlinkApplicationConfiguration:
+          ParallelismConfiguration:
+            Parallelism: 8
+            ConfigurationType: CUSTOM
+        ZeppelinApplicationConfiguration:
+          CatalogConfiguration:
+            GlueDataCatalogConfiguration:
+              DatabaseARN: !Sub "arn:aws:glue:${AWS::Region}:${AWS::AccountId}:database/msfstudio"
+          CustomArtifactsConfiguration:
+            - ArtifactType: DEPENDENCY_JAR
+              MavenReference:
+                GroupId: org.apache.flink
+                ArtifactId: flink-sql-connector-kinesis
+                Version: 1.15.4
+            - ArtifactType: DEPENDENCY_JAR
+              MavenReference:
+                GroupId: org.apache.flink
+                ArtifactId: flink-connector-kafka
+                Version: 1.15.4
+            - ArtifactType: DEPENDENCY_JAR
+              MavenReference:
+                GroupId: software.amazon.msk
+                ArtifactId: aws-msk-iam-auth
+                Version: 1.1.6
+
+
+
+
+
+###
+### Custom Lambda funciton to start MSF
+  MSFStartLambdaFunction:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      MemorySize: 1024
+      Runtime: "python3.9"
+      Handler: "index.handler"
+      FunctionName: create_msf_app_in_vpc
+      Role: { "Fn::GetAtt" : [ "MsfAppStartStopHandlerFunctionRole", "Arn" ] }
+      Timeout: 120
+
+      Code:
+        ZipFile: |
+          import cfnresponse
+          import logging
+          import signal
+          import boto3
+          import time
+
+          LOGGER = logging.getLogger()
+          LOGGER.setLevel(logging.INFO)
+
+          timeout_seconds = 550
+          poll_interval_seconds = 1
+
+
+          def handler(event, context):
+              # Setup alarm for remaining runtime minus a second
+              signal.alarm(timeout_seconds)
+              try:
+                  LOGGER.info('Request Event: %s', event)
+                  LOGGER.info('Request Context: %s', context)
+                  if event['RequestType'] == 'Create':
+                      start_app(event['ResourceProperties']['AppName'])
+                      cfnresponse.send(event, context, cfnresponse.SUCCESS, {
+                                      "Message": "Resource created"})
+                  elif event['RequestType'] == 'Update':
+                      cfnresponse.send(event, context, cfnresponse.SUCCESS, {
+                                      "Message": "Resource updated"})
+                  elif event['RequestType'] == 'Delete':
+                      stop_app(event['ResourceProperties']['AppName'])
+                      cfnresponse.send(event, context, cfnresponse.SUCCESS, {
+                                      "Message": "Resource deleted"})
+                  else:
+                      err = f"Unknown RequestType: {event['RequestType']}"
+                      LOGGER.error(err)
+                      cfnresponse.send(
+                          event, context, cfnresponse.FAILED, {"Message": err})
+              except Exception as e:
+                  LOGGER.error("Failed %s", e)
+                  cfnresponse.send(event, context, cfnresponse.FAILED,
+                                  {"Message": str(e)})
+
+
+          def start_app(appName):
+              client = boto3.client('kinesisanalyticsv2')
+              desc_response = client.describe_application(ApplicationName=appName)
+              status = desc_response['ApplicationDetail']['ApplicationStatus']
+              if status == "READY":
+                  # We assume that after a successful invocation of this API
+                  # application would not be in READY state.
+                  client.start_application(ApplicationName=appName)
+              while (True):
+                  desc_response = client.describe_application(ApplicationName=appName)
+                  status = desc_response['ApplicationDetail']['ApplicationStatus']
+                  if status != "STARTING":
+                      if status != "RUNNING":
+                          raise Exception(f"Unable to start the app in state: {status}")
+                      LOGGER.info(f"Application status changed: {status}")
+                      break
+                  else:
+                      time.sleep(poll_interval_seconds)
+
+          def stop_app(appName):
+              client = boto3.client('kinesisanalyticsv2')
+              while (True):
+                  desc_response = client.describe_application(ApplicationName=appName)
+                  status = desc_response['ApplicationDetail']['ApplicationStatus']
+                  if status == "RUNNING":
+                    # We assume that after a successful invocation of this API
+                    # application would not be in RUNNING state.
+                    client.stop_application(ApplicationName=appName, Force=True)
+                  elif status != "FORCE_STOPPING" and status != "UPDATING":
+                      if status != "READY":
+                          raise Exception(f"Unable to stop the app in state: {status}")
+                      LOGGER.info(f"Application status changed: {status}")
+                      break
+                  else:
+                      time.sleep(poll_interval_seconds)
+
+
+          def timeout_handler(_signal, _frame):
+              '''Handle SIGALRM'''
+              raise Exception('Operation timed out')
+
+
+          signal.signal(signal.SIGALRM, timeout_handler)
+
+  MsfAppStartStopCustomResource:
+    Type: "AWS::CloudFormation::CustomResource"
+    Properties:
+      ServiceToken: !GetAtt MSFStartLambdaFunction.Arn
+      AppName: !Ref MSFStudioApp
+  ### end create customer Lambda for start
+  ###
+  LazyDuckRole:
+      Type: AWS::IAM::Role
+      Properties:
+        AssumeRolePolicyDocument:
+          Version: 2012-10-17
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service: lambda.amazonaws.com
+              Action: 'sts:AssumeRole'
+        Path: /
+        ManagedPolicyArns:
+          - arn:aws:iam::aws:policy/AmazonKinesisFullAccess
+          - arn:aws:iam::aws:policy/AmazonSNSFullAccess
+          - arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
+          - arn:aws:iam::aws:policy/AmazonMSKFullAccess
+          - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+        Policies:
+          - PolicyName: ec2-network-interfaces-manage
+            PolicyDocument:
+              Version: 2012-10-17
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - ec2:CreateNetworkInterface
+                    - ec2:DescribeNetworkInterfaces
+                    - ec2:DeleteNetworkInterface
+                  Resource:
+                    - "*"
+          - PolicyName: kafka-cluster-connect
+            PolicyDocument:
+              Version: 2012-10-17
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - kafka-cluster:Connect
+                    - kafka-cluster:DescribeGroup
+                    - kafka-cluster:AlterGroup
+                    - kafka-cluster:DescribeTopic
+                    - kafka-cluster:ReadData
+                    - kafka-cluster:DescribeClusterDynamicConfiguration
+                  Resource:
+                    - "*"

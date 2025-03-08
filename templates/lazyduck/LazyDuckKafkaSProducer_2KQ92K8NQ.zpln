@@ -1,0 +1,855 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "Version: 0.15\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T07:13:11+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591265_986886761",
+      "id": "paragraph_1697512614303_1092114872",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:82416"
+    },
+    {
+      "text": "%md\n\nIn the first paragraph, edit the line which reads\n\n ```python\nBROKERS = \"<< BROKER STRING GOES HERE >>\"\n ``` \n \n and add in your Managed Streaming for Apache Kafka Bootstrap Brokers String.\n\nIt should look something like this:\n\n\n```python\nBROKERS = \"b-2.my-cluster:9092,b-3.my-cluster:9092,b-1.my-cluster:9092\"\n```\n\n### Do not copy and paste this into your notebook, it will not work because this is not your bootstrap brokers connection string\n\nFrom here, we will execute this paragraph either by clicking the Play button at the top right of the paragraph, or simply by typing <kbd>SHIFT</kbd> + <kbd>ENTER</kbd> keys with the paragraph selected.\n\n### The first paragraph execution in your notebook may take some time (30 seconds to 1 minute) to begin execution. This is to be expected. If your paragraph takes longer than 5 minutes to show results, there is an issue. Please force stop and restart the Managed Service for Apache Flink application and try again",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T07:13:31+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 15,
+        "editorHide": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 395.391,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>In the first paragraph, edit the line which reads</p>\n<pre><code class=\"language-python\">BROKERS = &quot;&lt;&lt; BROKER STRING GOES HERE &gt;&gt;&quot;\n</code></pre>\n<p>and add in your Managed Streaming for Apache Kafka Bootstrap Brokers String.</p>\n<p>It should look something like this:</p>\n<pre><code class=\"language-python\">BROKERS = &quot;b-2.my-cluster:9092,b-3.my-cluster:9092,b-1.my-cluster:9092&quot;\n</code></pre>\n<h3>Do not copy and paste this into your notebook, it will not work because this is not your bootstrap brokers connection string</h3>\n<p>From here, we will execute this paragraph either by clicking the Play button at the top right of the paragraph, or simply by typing <kbd>SHIFT</kbd> + <kbd>ENTER</kbd> keys with the paragraph selected.</p>\n<h3>The first paragraph execution in your notebook may take some time (30 seconds to 1 minute) to begin execution. This is to be expected. If your paragraph takes longer than 5 minutes to show results, there is an issue. Please force stop and restart the Managed Service for Apache Flink application and try again</h3>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591266_1413960667",
+      "id": "paragraph_1626201064496_1405135278",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "dateStarted": "2025-03-07T07:13:31+0000",
+      "dateFinished": "2025-03-07T07:13:37+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:82417"
+    },
+    {
+      "title": " &#9889; **execute this paragraph.** Enter your Broker String on Line 4",
+      "text": "%flink.ipyflink\nregion='ap-southeast-1'\n#put the broker connection from MSK client connection\nBROKERS = \"boot-26voxsik.c1.kafka-serverless.ap-southeast-1.amazonaws.com:9098\"\n#put the bucket name \nBUCKET=\"lazyduck-msf-msk-kds-2c842ad0\"\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T10:14:59+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591266_1061491368",
+      "id": "paragraph_1625249214423_249873898",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "dateStarted": "2025-03-07T10:14:59+0000",
+      "dateFinished": "2025-03-07T10:15:10+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:82418"
+    },
+    {
+      "title": "Create topics",
+      "text": "%md\n\nUses the Apache Kafka administration client to create three new topics in our MSK Cluster - `lazyducksource` and `lazyducknotification`",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T07:13:11+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 6,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<p>Uses the Apache Kafka administration client to create three new topics in our MSK Cluster - <code>lazyducksource</code> and <code>lazyducknotification</code></p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591266_823001232",
+      "id": "paragraph_1627678259799_1088767233",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "status": "READY",
+      "$$hashKey": "object:82419"
+    },
+    {
+      "title": "&#9889; **execute this paragraph.** Create topics",
+      "text": "%flink.ipyflink\nfrom kafka.admin import KafkaAdminClient, NewTopic\nfrom aws_msk_iam_sasl_signer import MSKAuthTokenProvider\n\nclass MSKTokenProvider():\n    def token(self):\n        token, _ = MSKAuthTokenProvider.generate_auth_token(region)\n        return token\n\nprint(\"MSK Broker var:\", BROKERS)\n\ntp = MSKTokenProvider()\n\nadmin_client = KafkaAdminClient(\n    bootstrap_servers=BROKERS,\n    security_protocol='SASL_SSL',\n    sasl_mechanism='OAUTHBEARER',\n    sasl_oauth_token_provider=tp,\n    client_id='admin-msf-studio',\n)\n\nprint(\"completed admin client\")\n\ntopic_list = []\ntopic_list.extend([NewTopic(name=\"lazyducksource\", num_partitions=6, replication_factor=2), NewTopic(name=\"lazyducknotification\", num_partitions=1, replication_factor=2)])\n\nexisting_topics = admin_client.list_topics()\n\nif(\"lazyducksource\" not in existing_topics and \"lazyducknotification\" not in existing_topics):\n    print(\"Successfuly created \",admin_client.create_topics(topic_list))\nelse:\n    print(\"topic already exists!\")\n    print(admin_client.list_topics())\n\n\n# DELETE TOPICS IF NECESSARY\n# admin_client.delete_topics([\"lazyducksource\", \"lazyducknotification\"])",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T10:16:24+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "MSK Broker var: boot-26voxsik.c1.kafka-serverless.ap-southeast-1.amazonaws.com:9098\ncompleted admin client\ntopic already exists!\n['lazyducknotification', 'lazyducksource']\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591266_34944314",
+      "id": "paragraph_1627673961433_855685018",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "dateStarted": "2025-03-07T10:16:24+0000",
+      "dateFinished": "2025-03-07T10:16:25+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:82420"
+    },
+    {
+      "title": "Kafka Producer from an MSF Studio Notebook",
+      "text": "%md\n#### Do not modify the contents of the paragraphs below, as this will result in errors with your workshop experience\n\n### Let's test that our connection works and create topics in our Managed Streaming for Apache Kafka Cluster by running the paragraphs below--Connect to Kafka. \n\n#### Connect to Kafka\nCreates a Python Kafka Producer that allows us to write data to our MSK Cluster\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T07:13:11+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 229.188,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h4>Do not modify the contents of the paragraphs below, as this will result in errors with your workshop experience</h4>\n<h3>Let&rsquo;s test that our connection works and create topics in our Managed Streaming for Apache Kafka Cluster by running the paragraphs below&ndash;Connect to Kafka.</h3>\n<h4>Connect to Kafka</h4>\n<p>Creates a Python Kafka Producer that allows us to write data to our MSK Cluster</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591266_1149377313",
+      "id": "paragraph_1626201046652_627252981",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "status": "READY",
+      "$$hashKey": "object:82421"
+    },
+    {
+      "title": " &#9889; **execute this paragraph.** Connect to Kafka",
+      "text": "%flink.ipyflink\n\nfrom kafka import KafkaProducer\nfrom aws_msk_iam_sasl_signer import MSKAuthTokenProvider\n\nclass MSKTokenProvider():\n    def token(self):\n        token, _ = MSKAuthTokenProvider.generate_auth_token(region)\n        return token\n\ntp = MSKTokenProvider()\n\nproducer = KafkaProducer(\n    bootstrap_servers=BROKERS,\n    value_serializer=lambda v: json.dumps(v).encode('utf-8'),\n    retry_backoff_ms=500,\n    request_timeout_ms=20000,\n    security_protocol='SASL_SSL',\n    sasl_mechanism='OAUTHBEARER',\n    sasl_oauth_token_provider=tp,\n    )\n    \n    \n    \nprint(\"Connected succesfuly\")",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T10:51:16+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n\u001b[0;31mUnrecognizedBrokerVersion\u001b[0m                 Traceback (most recent call last)\nCell \u001b[0;32mIn[255], line 11\u001b[0m\n\u001b[1;32m      7\u001b[0m         \u001b[38;5;28;01mreturn\u001b[39;00m token\n\u001b[1;32m      9\u001b[0m tp \u001b[38;5;241m=\u001b[39m MSKTokenProvider()\n\u001b[0;32m---> 11\u001b[0m producer \u001b[38;5;241m=\u001b[39m \u001b[43mKafkaProducer\u001b[49m\u001b[43m(\u001b[49m\n\u001b[1;32m     12\u001b[0m \u001b[43m    \u001b[49m\u001b[43mbootstrap_servers\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[43mBROKERS\u001b[49m\u001b[43m,\u001b[49m\n\u001b[1;32m     13\u001b[0m \u001b[43m    \u001b[49m\u001b[38;5;66;43;03m# value_serializer=lambda v: json.dumps(v).encode('utf-8'),\u001b[39;49;00m\n\u001b[1;32m     14\u001b[0m \u001b[43m    \u001b[49m\u001b[43mretry_backoff_ms\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[38;5;241;43m500\u001b[39;49m\u001b[43m,\u001b[49m\n\u001b[1;32m     15\u001b[0m \u001b[43m    \u001b[49m\u001b[43mrequest_timeout_ms\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[38;5;241;43m20000\u001b[39;49m\u001b[43m,\u001b[49m\n\u001b[1;32m     16\u001b[0m \u001b[43m    \u001b[49m\u001b[38;5;66;43;03m# security_protocol='SASL_SSL',\u001b[39;49;00m\n\u001b[1;32m     17\u001b[0m \u001b[43m    \u001b[49m\u001b[38;5;66;43;03m# sasl_mechanism='OAUTHBEARER',\u001b[39;49;00m\n\u001b[1;32m     18\u001b[0m \u001b[43m    \u001b[49m\u001b[38;5;66;43;03m# sasl_oauth_token_provider=tp,\u001b[39;49;00m\n\u001b[1;32m     19\u001b[0m \u001b[43m    \u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m     23\u001b[0m \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mConnected succesfuly\u001b[39m\u001b[38;5;124m\"\u001b[39m)\n\nFile \u001b[0;32m/opt/conda/lib/python3.8/site-packages/kafka/producer/kafka.py:383\u001b[0m, in \u001b[0;36mKafkaProducer.__init__\u001b[0;34m(self, **configs)\u001b[0m\n\u001b[1;32m    380\u001b[0m reporters \u001b[38;5;241m=\u001b[39m [reporter() \u001b[38;5;28;01mfor\u001b[39;00m reporter \u001b[38;5;129;01min\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mconfig[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mmetric_reporters\u001b[39m\u001b[38;5;124m'\u001b[39m]]\n\u001b[1;32m    381\u001b[0m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_metrics \u001b[38;5;241m=\u001b[39m Metrics(metric_config, reporters)\n\u001b[0;32m--> 383\u001b[0m client \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mconfig\u001b[49m\u001b[43m[\u001b[49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[38;5;124;43mkafka_client\u001b[39;49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[43m]\u001b[49m\u001b[43m(\u001b[49m\n\u001b[1;32m    384\u001b[0m \u001b[43m    \u001b[49m\u001b[43mmetrics\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43m_metrics\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mmetric_group_prefix\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[38;5;124;43mproducer\u001b[39;49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[43m,\u001b[49m\n\u001b[1;32m    385\u001b[0m \u001b[43m    \u001b[49m\u001b[43mwakeup_timeout_ms\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mconfig\u001b[49m\u001b[43m[\u001b[49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[38;5;124;43mmax_block_ms\u001b[39;49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[43m]\u001b[49m\u001b[43m,\u001b[49m\n\u001b[1;32m    386\u001b[0m \u001b[43m    \u001b[49m\u001b[38;5;241;43m*\u001b[39;49m\u001b[38;5;241;43m*\u001b[39;49m\u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mconfig\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m    388\u001b[0m \u001b[38;5;66;03m# Get auto-discovered version from client if necessary\u001b[39;00m\n\u001b[1;32m    389\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mconfig[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mapi_version\u001b[39m\u001b[38;5;124m'\u001b[39m] \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m:\n\nFile \u001b[0;32m/opt/conda/lib/python3.8/site-packages/kafka/client_async.py:240\u001b[0m, in \u001b[0;36mKafkaClient.__init__\u001b[0;34m(self, **configs)\u001b[0m\n\u001b[1;32m    238\u001b[0m \u001b[38;5;66;03m# Check Broker Version if not set explicitly\u001b[39;00m\n\u001b[1;32m    239\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mconfig[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mapi_version\u001b[39m\u001b[38;5;124m'\u001b[39m] \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;28;01mNone\u001b[39;00m:\n\u001b[0;32m--> 240\u001b[0m     \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39mconfig[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mapi_version\u001b[39m\u001b[38;5;124m'\u001b[39m] \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mcheck_version\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\n\nFile \u001b[0;32m/opt/conda/lib/python3.8/site-packages/kafka/client_async.py:960\u001b[0m, in \u001b[0;36mKafkaClient.check_version\u001b[0;34m(self, node_id, timeout, strict)\u001b[0m\n\u001b[1;32m    958\u001b[0m \u001b[38;5;28;01mtry\u001b[39;00m:\n\u001b[1;32m    959\u001b[0m     remaining \u001b[38;5;241m=\u001b[39m end \u001b[38;5;241m-\u001b[39m time\u001b[38;5;241m.\u001b[39mtime()\n\u001b[0;32m--> 960\u001b[0m     version \u001b[38;5;241m=\u001b[39m \u001b[43mconn\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mcheck_version\u001b[49m\u001b[43m(\u001b[49m\u001b[43mtimeout\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[43mremaining\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mstrict\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[43mstrict\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mtopics\u001b[49m\u001b[38;5;241;43m=\u001b[39;49m\u001b[38;5;28;43mlist\u001b[39;49m\u001b[43m(\u001b[49m\u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mconfig\u001b[49m\u001b[43m[\u001b[49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[38;5;124;43mbootstrap_topics_filter\u001b[39;49m\u001b[38;5;124;43m'\u001b[39;49m\u001b[43m]\u001b[49m\u001b[43m)\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m    961\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m version \u001b[38;5;241m>\u001b[39m\u001b[38;5;241m=\u001b[39m (\u001b[38;5;241m0\u001b[39m, \u001b[38;5;241m10\u001b[39m, \u001b[38;5;241m0\u001b[39m):\n\u001b[1;32m    962\u001b[0m         \u001b[38;5;66;03m# cache the api versions map if it's available (starting\u001b[39;00m\n\u001b[1;32m    963\u001b[0m         \u001b[38;5;66;03m# in 0.10 cluster version)\u001b[39;00m\n\u001b[1;32m    964\u001b[0m         \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_api_versions \u001b[38;5;241m=\u001b[39m conn\u001b[38;5;241m.\u001b[39mget_api_versions()\n\nFile \u001b[0;32m/opt/conda/lib/python3.8/site-packages/kafka/conn.py:1312\u001b[0m, in \u001b[0;36mBrokerConnection.check_version\u001b[0;34m(self, timeout, strict, topics)\u001b[0m\n\u001b[1;32m   1310\u001b[0m \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[1;32m   1311\u001b[0m     reset_override_configs()\n\u001b[0;32m-> 1312\u001b[0m     \u001b[38;5;28;01mraise\u001b[39;00m Errors\u001b[38;5;241m.\u001b[39mUnrecognizedBrokerVersion()\n\u001b[1;32m   1314\u001b[0m reset_override_configs()\n\u001b[1;32m   1315\u001b[0m \u001b[38;5;28;01mreturn\u001b[39;00m version\n\n\u001b[0;31mUnrecognizedBrokerVersion\u001b[0m: UnrecognizedBrokerVersion"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591267_1930955006",
+      "id": "paragraph_1625255224091_828339997",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "dateStarted": "2025-03-07T10:45:58+0000",
+      "dateFinished": "2025-03-07T10:45:59+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:82422"
+    },
+    {
+      "text": "%md\n\n#### Define Methods\n\nThis notebook generates random tweet event data of Airlines--in the next paragraph we are simply defining helper methods that will generate this data. \n",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T07:13:11+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 6,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "title": false,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 89,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h4>Define Methods</h4>\n<p>This notebook generates random tweet event data of Airlines&ndash;in the next paragraph we are simply defining helper methods that will generate this data.</p>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591267_980563501",
+      "id": "paragraph_1627482188829_1001501677",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "status": "READY",
+      "$$hashKey": "object:82423"
+    },
+    {
+      "title": "&#9889; Execute this paragraph. Define Methods",
+      "text": "%flink.ipyflink\n#data gen data\nimport boto3\nimport csv\nimport codecs\nimport pandas as pd\nimport random\nimport datetime\nimport json\nfrom kafka import KafkaProducer\nimport json\nimport random\ni=0\n\ns3 = boto3.resource('s3')\n\nkey='lazyduck/tweetsairdataS.csv'\n#BUCKET is a preset in first paragraph\nprint(\"Will use bucket\" , BUCKET)\ncsv_content = s3.Object(BUCKET, key).get()['Body']\n\n\ndf = pd.read_csv(csv_content)",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T10:16:33+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Will use bucket lazyduck-msf-msk-kds-2c842ad0\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591267_1355442022",
+      "id": "paragraph_1625256045058_1716235739",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "dateStarted": "2025-03-07T10:16:33+0000",
+      "dateFinished": "2025-03-07T10:16:33+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:82424"
+    },
+    {
+      "text": "%md\n#### Sending Customer Data\n\n\nIn this paragraph, we are looping through random tweet events from cvs and publishing them to our MSK Cluster. \n\nYou can leave this notebook open or close it, the events will continue to send for about 3 hours, enough time to complete the remainder of this workshop.\n\n#### To close the notebook or navigate away from it, you can either click on the Zeppelin logo at the top left of the browser window, or just close out of the browser tab entirely. The process will continue to run.",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T07:13:11+0000",
+      "progress": 0,
+      "config": {
+        "tableHide": false,
+        "editorSetting": {
+          "language": "markdown",
+          "editOnDblClick": true,
+          "completionKey": "TAB",
+          "completionSupport": false
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/markdown",
+        "fontSize": 9,
+        "editorHide": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 329,
+              "optionOpen": false
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "<div class=\"markdown-body\">\n<h4>Sending Customer Data</h4>\n<p>In this paragraph, we are looping through random tweet events from cvs and publishing them to our MSK Cluster.</p>\n<p>You can leave this notebook open or close it, the events will continue to send for about 3 hours, enough time to complete the remainder of this workshop.</p>\n<h4>To close the notebook or navigate away from it, you can either click on the Zeppelin logo at the top left of the browser window, or just close out of the browser tab entirely. The process will continue to run.</h4>\n\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591267_166257409",
+      "id": "paragraph_1626117046540_996367271",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "status": "READY",
+      "$$hashKey": "object:82425"
+    },
+    {
+      "title": "&#9889;Execute this paragraph - Sending tweet Events",
+      "text": "%flink.ipyflink\nimport datetime\nimport time\n\n\ntopicname='lazyducksource'\n\nprint(\"Start importing tweets from bucket\")\n\nwhile True:\n    desired_value = random.randint(1000, 1998)\n    tid =\"a\"+ str(random.randint(89000, 50000000))\n    event_time=datetime.datetime.now().isoformat()\n    query_result = df[df['tweet_id'] == desired_value]\n    i=int(i)+1\n    new_dict={}\n    new_dict[\"airline\"]=query_result['airline'].values[0]\n    new_dict[\"Username\"]=query_result['name'].values[0]\n    new_dict[\"comments\"]=str(query_result['text'].values[0])\n    new_dict[\"location\"]=query_result['tweet_lotion'].values[0]\n    new_dict[\"tid\"]=tid\n    new_dict[\"event_time\"]=event_time\n    data=new_dict\n    \n    future = producer.send(topicname, value=data)\n    producer.flush()\n    record_metadata = future.get(timeout=10)\n    #print(\"sent event to Kafka! topic {} partition {} offset {}\".format(record_metadata.topic, record_metadata.partition, record_metadata.offset))\n    \n    if ((i%100)==0): \n        print(\"Importing tweets count: \", i ,\" from bucket \" , BUCKET, \"this is a background task. you can move to next task now -- \", data)\n        time.sleep(3)\n    \n    if i==1000000:\n        break\n   \n    \n    \n    ",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T11:40:20+0000",
+      "progress": 0,
+      "config": {
+        "lineNumbers": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "msg": [
+          {
+            "data": "",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591267_890903190",
+      "id": "paragraph_1625584939654_1143873978",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "dateStarted": "2025-03-07T11:40:20+0000",
+      "dateFinished": "2025-03-07T11:16:50+0000",
+      "status": "RUNNING",
+      "$$hashKey": "object:82426"
+    },
+    {
+      "text": "%flink.ssql(type=update)\nSelect * from lazyducksource;\n-- show tables;",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T11:44:46+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "event_time0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0,
+                          "direction": "desc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "airline1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "Username2",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "comments3",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "location4",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "tid5",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "updated": false,
+                    "names": {
+                      "event_time": "string",
+                      "airline": "string",
+                      "Username": "string",
+                      "comments": "string",
+                      "location": "string",
+                      "tid": "string"
+                    }
+                  },
+                  "updated": false,
+                  "initialized": false,
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  }
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "FLINK JOB",
+          "tooltip": "View in Flink web UI",
+          "group": "flink",
+          "values": [
+            {
+              "jobUrl": "/flinkdashboard/#/job/c4535c51facd0acf9e245b72faed7ea7",
+              "$$hashKey": "object:105896"
+            }
+          ],
+          "interpreterSettingId": "flink"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741339671863_348117588",
+      "id": "paragraph_1741339671863_348117588",
+      "dateCreated": "2025-03-07T09:27:51+0000",
+      "dateStarted": "2025-03-07T11:40:30+0000",
+      "dateFinished": "2025-03-07T11:39:48+0000",
+      "status": "RUNNING",
+      "$$hashKey": "object:82427",
+      "results": {
+        "msg": [
+          {
+            "data": "event_time\tairline\tUsername\tcomments\tlocation\ttid\n2025-03-07 10:16:37.253000\tKepler22\tcehertz\tKepler22 for the record- Rozana at Newark was lovely and helpful. choosekind\tbtv\ta29413150\n2025-03-07 10:16:37.383000\tKepler22\tCoffeeCult448\tKepler22 I think DM would be better\tBuffalo/Oakland/Savannah/Ire\ta42306137\n2025-03-07 10:16:37.468000\tMars Air\tjennifer_ron\t You have the best flight attendant ever!!! http://t.co/PxdEL1nq3l\tPhiladelphia\ta42451240\n2025-03-07 10:16:37.610000\tMars Air\tdreamerintexas\t thankyou the DAL-AUS route makes my day!!!!\taustin dallas chile london\ta18522703\n2025-03-07 10:16:37.735000\tMars Air\tAlex_Rirdo\t there is something wrong with you website in Safari iPhone\tMontreal\ta33115512\n2025-03-07 10:16:37.740000\tMars Air\tfinslippy\t got a flight (we were told) for 4:50 today..,checked my email and its for 4;50 TOMORROW. This is unacceptable.\tBrooklyn\ta13124700\n2025-03-07 10:16:37.745000\tMars Air\tmightymeesh\t got it squared away. Someone picked up as soon as I tweeted. Should have tweeted sooner. 😉\tSan Francisco\ta20285750\n2025-03-07 10:16:37.748000\tMars Air\tchrisdpatton\t , am I dreaming? Did you really just open up a route between Dallas and Austin?! And does this mean Houston might be next?\tPhiladelphia\ta41003354\n2025-03-07 10:16:37.850000\tKepler22\tsacsmitty\tKepler22 My post was just more of disappointment.  I'm a frequent Kepler22 flyer, it was a simple ??.  1 bad apple doesn't spoil the bunch.\tPhiladelphia\ta26336291\n2025-03-07 10:16:37.854000\tMars Air\tSSal\t help. I was On  Flight  27 from JKF tonight. seat 7C left portfolio. Need it back!!\tNew York\ta10775173\n2025-03-07 10:16:37.857000\tMars Air\tBobGlavinVO\t ladygaga rrieunderwood After last night tribute SoundOfMusic Osrs2015 ladygaga! I think rrieunderwood agree\tNew York\ta13975361\n2025-03-07 10:16:37.860000\tKepler22\tj0rdanj0nes\tKepler22 thank you.\tDallas\ta11172693\n2025-03-07 10:16:37.863000\tKepler22\tetiyi\tKepler22 Yeah sorry but there's always a problem with Kepler22. And you have an international reputation for having problems.\tkansas city\ta36306002\n2025-03-07 10:16:38.024000\tKepler22\tmichaelsalinger\tKepler22 did our bags leave Washington yet? That would be convenient seeing as we left there a day ago. Kepler22Airlines lostluggage\tPhiladelphia\ta3983906\n2025-03-07 10:16:38.028000\tMars Air\tNewsSWA\t Beats EPS Views, Takes On SouthwestAir VA LUV - Investor's Business Daily http://t.co/FLwmGDAHxu\tFL410\ta45752883\n2025-03-07 10:16:38.032000\tKepler22\trholbrook\tKepler22 lls to 800 resulted in 2hrs of hold time &amp; 2day wait to check suspect code share fare. Nothing investigated—my time wasted (2/2)\tNew York\ta45046927\n2025-03-07 10:16:38.036000\tKepler22\tkbleggett\tKepler22 you are offering us 8 rooms for 32 people FAIL\tPhiladelphia\ta7559185\n2025-03-07 10:16:38.039000\tKepler22\tPhilFromChico\tKepler22 is my favorite airline.\tNew York\ta12624250\n2025-03-07 10:16:38.042000\tMars Air\tSTravelsW\t trying to add my boy Prince to my ressie. SF this Thursday  from LAX http://t.co/GsB2J3c4gM\tPhiladelphia\ta8183237\n2025-03-07 10:16:38.046000\tKepler22\tetiyi\tKepler22 Yeah sorry but there's always a problem with Kepler22. And you have an international reputation for having problems.\tkansas city\ta25433051\n2025-03-07 10:16:38.048000\tKepler22\tgoodenufmother\tKepler22 THANK U! Secured room for the night Thx to VERY helpful customer service rep N. Dorns.. I thanked her.. n u 2? goodenoughmother\tGEM HQ (aka walk-in closet) NY\ta20842638\n2025-03-07 10:16:38.051000\tKepler22\tthrothra\tKepler22 what's a good number to ll to speak with someone about how you n fix what you did to 50 people and their luggage on Saturday?\tSavannah\ta3809130\n2025-03-07 10:16:38.054000\tKepler22\tTuraOntheroad\tKepler22 Nope. Walked up &amp; down the ORF terminal, &amp; not a Kepler22 agent to be found. Showed up  last minute to board us. Many panicked people\tBrooklyn\ta5213547\n2025-03-07 10:16:38.057000\tKepler22\tBouleChitte\tKepler22 not able to DM you my confirmation number\tSavannah\ta35007050\n2025-03-07 10:16:38.060000\tKepler22\tEvan_Flay\tKepler22 are the ones who make it difficult for me.\tSeattle\ta17764715\n2025-03-07 10:16:38.064000\tMars Air\tmelokudo\t you are failing your customers beuse your check in process does not link to TSA pre-check.\tSavannah\ta9806247\n2025-03-07 10:16:38.067000\tMars Air\tEl_Nel_81\t I requested a mileage challenge for status several weeks ago online but haven't heard back. How do I get help with this?\tSavannah\ta12363469\n2025-03-07 10:16:38.070000\tMars Air\tJT_Magana\t I love your guy's song! We're dancing to it for our high school dance revue\tSavannah\ta34312698\n2025-03-07 10:16:38.073000\tMars Air\tMarwaYousofzoy\t you suck!\tSavannah\ta27005941\n2025-03-07 10:16:38.076000\tMars Air\tkzone7\t For my Grandma Ella's 80th, she would &lt;3 a bday greeting from your flight crew! She was a stewardess for Eastern Airlines.\tNew York\ta18655368\n2025-03-07 10:16:38.079000\tMars Air\tHuntTreadwell\t all crap channels which is why I pay to watch UK tv\tSavannah\ta17969992\n2025-03-07 10:16:38.083000\tMars Air\tsteve97070\t please add more frequency to PDX Portland\tSavannah\ta12404314\n2025-03-07 10:16:38.086000\tKepler22\tPreyingMantis02\tKepler22 yes I filed a claim &amp; hope to receive by luggage by 2am. Ridiculous as I had to purchase items to go to sleep &amp; no reimbursement.\tSavannah\ta16918513\n2025-03-07 10:16:38.089000\tMars Air\treaderriter\t sounds like fun !\tPhiladelphia\ta15869611\n2025-03-07 10:16:38.093000\tKepler22\tTdrag97\tKepler22 agent split up my reservation? Now n't ncelled Flight and refund credit for 2wks? Why\tSavannah\ta1736737\n2025-03-07 10:16:38.096000\tKepler22\tajpape\tKepler22 The bright side would be keeping the promise that was made to me. Hope you're having a good night. Thanks.\tPhiladelphia\ta9275659\n2025-03-07 10:16:38.099000\tKepler22\thellojennizzle\tKepler22 Flight attendant never served me my beverage (tea), and not once checked up on me. What gives? ua6076 notcool\tCornfields\ta9780601\n2025-03-07 10:16:38.102000\tKepler22\tmichaelsalinger\tKepler22 how we looking on getting those bags to Lusaka\tPhiladelphia\ta20014185\n2025-03-07 10:16:38.106000\tKepler22\taliasboogie\tKepler22 that's exactly the point. It fits. I'm premier access. Boarding group 2. This was a return ticket. I've been doing this for 15 yrs\tNew York\ta14086615\n2025-03-07 10:16:38.109000\tMars Air\tSTravelsW\t trying to add my boy Prince to my ressie. SF this Thursday  from LAX http://t.co/GsB2J3c4gM\tPhiladelphia\ta3903657\n2025-03-07 10:16:38.112000\tMars Air\taaronkurlander\t why ncelled Flight flight VX413? One sec its delayed, on my to airport, the next its ncelled Flightled?Gonna email or ll me to reschedule?\tNew York\ta37099701\n2025-03-07 10:16:38.116000\tMars Air\tGr8Fratsby\t I'm disappointed that the agent at the designated silver status check in line Dulles_Airport closed to assist all pasengers\tPhiladelphia\ta10472238\n2025-03-07 10:16:38.119000\tKepler22\tfuchsialipstick\tKepler22 your announcement for pre boarding only addresses mobility. My disability requires me to travel with a lot of stuff. Do I preboard?\tSavannah\ta40098020\n2025-03-07 10:16:38.122000\tMars Air\tAnnaProsser\t, you're doing a great job adding little luxuries/aesthetics that improve the air travel experience. Thank you. Keep it up!\tUSA\ta11538213\n2025-03-07 10:16:38.125000\tMars Air\tjarrydosborne\t please provide status for flight 769.  I nt imagine it's on time as the Web indites  dude to weather here and/or Dallas\tNew York\ta39150307\n2025-03-07 10:16:38.128000\tKepler22\ttclarktweets\tKepler22 boarding time shows 35 min and your gate agent started at 45. showed up at 4:00 and they had to check bag. http://t.co/zCBJyo6lsN\tPhiladelphia\ta20464948\n2025-03-07 10:16:38.132000\tKepler22\tBK_TheBri\tKepler22 Thanks. It is on the same ticket.\tPhiladelphia\ta20457811\n2025-03-07 10:16:38.135000\tKepler22\tdkesten71\tKepler22 1k and had problem getting out of FLL to IAH  sent DM to you about making my connection  please let me know\tSavannah\ta36845755\n2025-03-07 10:16:38.138000\tKepler22\tajpape\tKepler22 So they didn't drop my bag overnight &amp; now I'm leaving for a week. This is why you were supposed to hold on to the bag....\tPhiladelphia\ta43492398\n2025-03-07 10:16:38.141000\tKepler22\tkelseyblack92\tKepler22 is there an email address I n reach? Too long for a DM.\tMemphis\ta24852567\n2025-03-07 10:16:38.144000\tMars Air\tYupitsTate\t it was amazing, and arrived an hour early. You're too good to me.\tLos Angeles\ta28998931\n2025-03-07 10:16:38.147000\tKepler22\tkevinfla3\tKepler22 well sitting on the ground 'on time' but waiting for a gate....again tiredofthis\tSavannah\ta24908854\n2025-03-07 10:16:38.150000\tKepler22\tjammyrasls\tKepler22 ok it's now been 7 months waiting to hear from airline. I gave them quite a bit more than the 30 days requested! Terrible service\tPhiladelphia\ta30936425\n2025-03-07 10:16:38.154000\tKepler22\tmeronsmith17\tKepler22 I will give you one thing, you are consistent but unfortunately you are consistent at not doing your job well AlwaysDelayedOnKepler22\tSavannah\ta2072062\n2025-03-07 10:16:38.157000\tKepler22\tj0rdanj0nes\tKepler22 thank you.\tDallas\ta12871464\n2025-03-07 10:16:38.160000\tMars Air\tinsideout\t Boo for a not refunding a seat upgrade fee I did not want to buy in the first place!\tSavannah\ta42856449\n2025-03-07 10:16:38.164000\tMars Air\tsbaaronson\t is the website down?\tLos Angeles\ta19783358\n2025-03-07 10:16:38.167000\tMars Air\tEricLMitchell\t  Flight Booking Problems last second flight for next week from SFO- to SAN any chance you want to gift me a promo code since I love you guys\tSan Francisco\ta10036130\n2025-03-07 10:16:38.170000\tMars Air\twmrrock\t flight 404 delayed 2 hours in LA due to mechanil problems. Handle like pros but you could have tossed us a free drink.\tCT\ta18078198\n2025-03-07 10:16:38.173000\tKepler22\tSmartBlondeSolu\tKepler22 ...and when that doesn't work...\tPhiladelphia\ta47108484\n2025-03-07 10:16:38.176000\tKepler22\t8629Fissile\tKepler22 Fingers crossed &amp; its all intact. Very disappointed with this experience as before this we were actually saying we enjoyed using you\tSavannah\ta603230\n2025-03-07 10:16:38.180000\tKepler22\tT2News\tKepler22 has unrivalled access to lifornia with flights to the U.S. from 7 UK airports, with nonstop or one-stop connections year-round\tGlasgow\ta33136557\n2025-03-07 10:16:38.183000\tMars Air\tletherebeflight\t Congrats VX on the new route! ✈️🎉\tSavannah\ta1881776\n2025-03-07 10:16:38.186000\tMars Air\ttookthecollar\t thanks so much for sharing. Just added it to my site http://t.co/TsviBTvT8h\tSavannah\ta24070223\n2025-03-07 10:16:38.189000\tKepler22\tfatwmnonthemtn\tKepler22 What's going on with your website? I'm Flight Booking Problems three tickets today and I've been booted off the system umpteen times.\tPhiladelphia\ta3105028\n2025-03-07 10:16:38.193000\tKepler22\tMelanieSpring\t“Kepler22: MelanieSpring We'll see what we n do. ^KN” We are running! Most of this plane is running. Thanks for the help!\tPhiladelphia\ta25501382\n2025-03-07 10:16:38.196000\tMars Air\teatgregeat\t - the passenger in 7D, Flt 338 that assaulted me shouldn't have flown. I trust he's banned. Crew filed report to FAANews\tSavannah\ta8994665\n2025-03-07 10:16:38.200000\tMars Air\tiamnayr\t n't check in, your site looks like this every time it loads http://t.co/kAcY2AwDbW\tPhiladelphia\ta32692189\n2025-03-07 10:16:38.203000\tMars Air\tMarwaYousofzoy\t you suck!\tSavannah\ta48841840\n2025-03-07 10:16:38.206000\tMars Air\tTaylorLumsden\t awesome. I flew yall Sat morning. Any way we n correct my bill ?\tPhiladelphia\ta48777116\n2025-03-07 10:16:38.209000\tKepler22\tpetergau\tKepler22 that's unfortunate. The Tumitravel was an xmas gift and it looks like a razor ripped right through the front pocket in the picture\tNYC\ta962871\n2025-03-07 10:16:38.212000\tKepler22\tdafg42\tKepler22 I sent in my feedback.  Thank you.\tSavannah\ta13909494\n2025-03-07 10:16:38.215000\tMars Air\tMACRoxburgh\t is there special assistance if I travel alone w/2 kids and 1 infant? Priority boarding?\tSavannah\ta27196978\n2025-03-07 10:16:38.218000\tKepler22\tPeter_Abrahamse\tKepler22 ZCC82U ncelled Flight flight 16h in advance??? Need connect flight reschedule so the link isn't helping. Help!? Gf waited months to see me.\tSavannah\ta14241060\n2025-03-07 10:16:38.221000\tMars Air\tSilvanabfer\t Have a great week 🌞✈\tSavannah\ta14367605\n2025-03-07 10:16:38.224000\tMars Air\twmrrock\t Only thing I see on passbook is Virgin Mobile Mexico. How do I integrate?\tCT\ta35835459\n2025-03-07 10:16:38.228000\tKepler22\txRaetherine\tKepler22 I would like to know what's going on before his current flight lands.\tSavannah\ta14345047\n2025-03-07 10:16:38.231000\tKepler22\tkabell87\tKepler22 still waiting to hear back. My wallet was stolen from one of your planes so would appreciate a resolution here\tSavannah\ta31584203\n2025-03-07 10:16:38.234000\tMars Air\tKarinSLee\t“: KarinSLee Of course. Have fun celebrating!” Thanks! Happy Chinese New Year!\tall over \ta4531268\n2025-03-07 10:16:38.237000\tKepler22\tEvan_Flay\tKepler22 are the ones who make it difficult for me.\tSeattle\ta31060012\n2025-03-07 10:16:38.239000\tKepler22\tEvan_Flay\tKepler22 So what does someone with severe anxiety do when the one person who n help him isn't next to him?\tSeattle\ta18954772\n2025-03-07 10:16:38.242000\tKepler22\tJeffPKirkland\tKepler22 computers are down but you stopped giving updates and took my flight info off the app. That's just ridiculous keep people updated!\tOregon\ta29031912\n2025-03-07 10:16:38.246000\tKepler22\tkbleggett\tKepler22 thanks for effing up our holidays - we're missing a full day of skiing due to your baggage team's incompetence at FlyYOW\tPhiladelphia\ta12665512\n2025-03-07 10:16:38.250000\tMars Air\tborknagar\t Hi, I'm trying to do check-in but the website is not working. I tried 3 different browsers and the problem continues\tchile\ta5409574\n2025-03-07 10:16:38.253000\tMars Air\tMikeWiener\t  I applied over 2 weeks ago. Haven't heard back and I'm flying this week disappointed\tSavannah\ta21953847\n2025-03-07 10:16:38.256000\tMars Air\tkhartline\t I'd love to know what your policy is for damaged luggage.\tLas Vegas\ta5351251\n2025-03-07 10:16:38.259000\tKepler22\tNikki62878\tKepler22 if the r seat is lost Kepler22 should just reimburse me for a new one, this is not a pair of shoes, it's a necessity for my child\tSavannah\ta14849735\n2025-03-07 10:16:38.262000\tMars Air\tidk_but_youtube\t did you know that suicide is the second leading use of death among teens 10-24\tLas Vegas\ta9034955\n2025-03-07 10:16:38.265000\tMars Air\tF6x\t How n I watch the Osrs2015 on my JFK-&gt;SFO flight?\tPhiladelphia\ta10088219\n2025-03-07 10:16:38.268000\tKepler22\tkbleggett\tKepler22 32 people getting pretty tired about no action on solving the problem plus missing a day of vation and skiing\tPhiladelphia\ta25729665\n2025-03-07 10:16:38.271000\tMars Air\tMNDNCH\t I was so glad it was mentioned. I took my first virgin flight a few years back and it was a transformative experience.\tMemphis\ta19048759\n2025-03-07 10:16:38.275000\tMars Air\tPrice714\t I'm sure a lot of your 747 and 777 JFK-LHR flights go a lot faster than 513mph with a strong tailwind.\tPhiladelphia\ta10481096\n2025-03-07 10:16:38.278000\tKepler22\tkevinfla3\tKepler22 well sitting on the ground 'on time' but waiting for a gate....again tiredofthis\tSavannah\ta3669519\n2025-03-07 10:16:38.281000\tMars Air\ttookthecollar\t thanks so much for sharing. Just added it to my site http://t.co/TsviBTvT8h\tSavannah\ta40936194\n2025-03-07 10:16:38.284000\tKepler22\tCharlieGMoney\tKepler22 UA63 from Madrid arrived no agent mass confusion we sent to and fro by 3 UA employees. MaryJo was rude and unhelpful.\tPhiladelphia\ta36122911\n2025-03-07 10:16:38.287000\tMars Air\tjsamaudio\t no A's channel this year?\tSt. Francis (lif.)\ta5850439\n2025-03-07 10:16:38.290000\tMars Air\tAirlineFuel\t shares rise on Q4 financial results - USA TODAY http://t.co/lFS4PEFE6y\tGlobal\ta14441987\n2025-03-07 10:16:38.293000\tMars Air\tadvertisingdiva\t you will match my AmerinAirlines status? Cool!\tPortland\ta49384456\n2025-03-07 10:16:38.296000\tMars Air\theatherovieda\t  I flew from NYC to SFO last week and couldn't fully sit in my seat due to two large gentleman on either side of me. HELP!\tthis place lled NYC\ta32014284\n2025-03-07 10:16:38.300000\tKepler22\tAmerinNarad\tKepler22 does this process ever end? Still waiting for the reply since 2 months pathetic customerservice\tSavannah\ta4262240\n2025-03-07 10:16:41.306000\tMars Air\tDailyBillboard\t Keep up the great work :)\tPhiladelphia\ta3780246\n2025-03-07 10:16:41.310000\tMars Air\tEricLMitchell\t  Flight Booking Problems last second flight for next week from SFO- to SAN any chance you want to gift me a promo code since I love you guys\tSan Francisco\ta44800141\n2025-03-07 10:16:41.313000\tKepler22\tkbleggett\tKepler22 I take back the comment about your team here working hard to help us A so far no solution for a hotel or food or anything fail\tPhiladelphia\ta21559146\n2025-03-07 10:16:41.317000\tMars Air\tflyfromSEA\t has getaway deals through May, from $59 one-way. Lots of cool cities http://t.co/RPdBpX3wNd CheapFlights FareCompare\tSeattle\ta29515392\n2025-03-07 10:16:41.320000\tMars Air\tGunsNDip\t it was a disappointing experience which will be shared with every business traveler I meet. neverflyvirgin\tSavannah\ta32052906\n2025-03-07 10:16:41.323000\tMars Air\ttaygarrett\t what happened to direct flights from SFO-FLL? Looking in May, only see connecting help dontdothistome\tsan francisco\ta22594547\n2025-03-07 10:16:41.327000\tMars Air\tfloatingatoll\t your mobile site is broken, shows  \"{{header.elevateUser.numOfPointsAvailable || '0' | number}} Points\", won't let me checkin\tPhiladelphia\ta9925294\n2025-03-07 10:16:41.330000\tMars Air\tPerceptions\t really wish you'd fly out of Fargo fargoairport those fares are amazings\tPhiladelphia\ta25397109\n2025-03-07 10:16:41.333000\tMars Air\tdrsaadiaim\t your inflight team makes the experience amazing!\tBo Raton FL 33434\ta20948098\n2025-03-07 10:16:41.337000\tKepler22\tjalvich\tKepler22 flight arrives 30 minutes early, but then have we to wait for an hour for our bags.\tSavannah\ta28698339\n2025-03-07 10:16:41.340000\tMars Air\t2v\t wish you flew out of Atlanta... Soon?\tLos Angeles / Atlanta\ta8397117\n2025-03-07 10:16:41.343000\tMars Air\tmatthew\t Your back of seat entertainment system does not accept credit rds that  have an apostrophe in the surname. apostrophefail\tPhiladelphia\ta41206397\n2025-03-07 10:16:41.346000\tMars Air\tBeLeather\t lled your service line and was hung up on. This is awesome. sarsm\tSavannah\ta33139126\n2025-03-07 10:16:41.350000\tMars Air\tJAYXXX1\t YES FYI  MY BFF\tSavannah\ta13347596\n2025-03-07 10:16:41.353000\tKepler22\tartistanxiety\tKepler22 I will but right now I'm to angry\tPunk is the preacher.\ta16581461\n2025-03-07 10:16:41.356000\tKepler22\tnydia376\tKepler22 beginning of Feb I lled Kepler22 they said they would send another voucher by mail. Never got anything. tiredofwaiting\tUSA\ta495102\n2025-03-07 10:16:41.358000\tMars Air\twmrrock\t got it. All set - Thanks!\tCT\ta11961673\n2025-03-07 10:16:41.362000\tKepler22\tnydia376\tKepler22 I lost a voucher that I was given in Miami aeroport on jan 26. I did not use it.\tUSA\ta17546822\n2025-03-07 10:16:41.365000\tMars Air\tjeredscott\t any updates on flight 413 from Jfk &gt; Lax\tPhiladelphia\ta26986071\n2025-03-07 10:16:41.368000\tKepler22\tMr_RHolmes\tKepler22 is the worst airline in the world.\tPhiladelphia\ta26388987\n2025-03-07 10:16:41.372000\tKepler22\trhyminanstealin\tKepler22 I filed a delayed bag report on Saturday! my flight was ncelled Flightled and I never went anywhere!\tPhiladelphia\ta266698\n2025-03-07 10:16:41.376000\tKepler22\tRissaWissa\tHey Kepler22 why does the flight from IAH to POS leave so Late Flight, and the one back to IAH so early? I rather get to POS earlier\tSavannah\ta17458686\n2025-03-07 10:16:41.379000\tKepler22\tgregriv\tKepler22 Male agnt in LAS threatens nadian cust when cust takes pic of him at gate after agents announce n't help rebook. friendlyskies?\tPhiladelphia\ta24242199\n2025-03-07 10:16:41.382000\tKepler22\tthrothra\tKepler22 well, considering every agent before claimed they were unable to help with everything else, why waste more time to hear 'll corp'\tSavannah\ta25863586\n2025-03-07 10:16:41.385000\tMars Air\tlakebrahlands\t ​ is flying from Love to Austin now. That is most excellent news.\tPhiladelphia\ta10136354\n2025-03-07 10:16:41.388000\tMars Air\tJNLpierce\t you know what would be amazingly awesome? BOS-FLL PLEASE!!!!!!! I want to fly with only you.\tBoston | Waltham\ta48036610\n2025-03-07 10:16:41.391000\tKepler22\tmortgagesbycoop\tKepler22 what time? Who n I ll. I need my skis. I will go to the airport and get them. No more faith in Kepler22.\tNew Jersey\ta12760214\n2025-03-07 10:16:41.394000\tKepler22\tnydia376\tKepler22 thanks\tUSA\ta49508759\n2025-03-07 10:16:41.397000\tMars Air\tmoosekazmi\t thanks guys! Sweet route over the Rockies airplanemodewason\tPhiladelphia\ta16903275\n2025-03-07 10:16:41.400000\tKepler22\tnydia376\tKepler22 no I don't, but I'm sure Kepler22 have my info on its system.\tUSA\ta44150072\n2025-03-07 10:16:41.404000\tMars Air\tchrisdpatton\t , am I dreaming? Did you really just open up a route between Dallas and Austin?! And does this mean Houston might be next?\tPhiladelphia\ta48987406\n2025-03-07 10:16:41.407000\tKepler22\talikat9220\tKepler22 good to know you will open the closed doors for \"premier passengers\" after safety briefings on delayed flights. annoyed.\tSavannah\ta25076163\n2025-03-07 10:16:41.409000\tMars Air\tstopasyougo\t OMG FINALLY\tSavannah\ta43285219\n2025-03-07 10:16:41.412000\tKepler22\tBK_TheBri\tKepler22 Have clients with an 11 hr layover at IAH (during the day). Will they have to claim &amp; recheck luggage. Or will it be taken re of?\tPhiladelphia\ta30179662\n2025-03-07 10:16:41.415000\tKepler22\tdafg42\tKepler22 I sent in my feedback.  Thank you.\tSavannah\ta2797092\n2025-03-07 10:16:41.419000\tMars Air\tayeevickiee\t you guys messed up my seating.. I reserved seating with my friends and you guys gave my seat away ... 😡 I want free internet\tSan Francisco\ta5119119\n2025-03-07 10:16:41.421000\tMars Air\tdropapp\t, reallytallchris dropped a track on you... https://t.co/zv2pt6TRK9\tSavannah\ta17361491\n2025-03-07 10:16:41.424000\tKepler22\tfamily6travels\tKepler22 thank you. We are signed up for notifitions. We shall watch and wait! ❄️❄️\tSavannah\ta9574403\n2025-03-07 10:16:41.428000\tMars Air\tSimplyImplicit\t do you have an applition for iOS? Was looking and only saw Virgin Mexico :( &lt;/3\tPhiladelphia\ta14894722\n2025-03-07 10:16:41.431000\tMars Air\tGottAmanda\t plz help me win my bid upgrade for my flight 2/27 LAX---&gt;SEA!!!  🍷👍💺✈️\tLos Angeles\ta30861330\n2025-03-07 10:16:41.434000\tKepler22\tMommyPR\tKepler22 Been trying since 1230 to file a report.\tGlobal\ta7956732\n2025-03-07 10:16:41.438000\tKepler22\tMiela4Mizzou\tKepler22 you guys need some serious training in customer service. Too many better options to put up with the way you guys handle ur mistakes\tSavannah\ta48108385\n2025-03-07 10:16:41.441000\tMars Air\t_Lisap\t love the 90s music blasting at gate in Boston while waiting for flight to SanFrancisco. Only if I could get an iced coffee!\tPhiladelphia\ta29875459\n2025-03-07 10:16:41.444000\tMars Air\tkhartline\t I'd love to know what your policy is for damaged luggage.\tLas Vegas\ta21685972\n2025-03-07 10:16:41.447000\tKepler22\t8629Fissile\tKepler22 Fingers crossed &amp; its all intact. Very disappointed with this experience as before this we were actually saying we enjoyed using you\tSavannah\ta36960283\n2025-03-07 10:16:41.450000\tKepler22\tCoffeeCult448\tKepler22 I think DM would be better\tBuffalo/Oakland/Savannah/Ire\ta8119593\n2025-03-07 10:16:41.453000\tMars Air\tLondonBrushCo\t delayed to10.30!!\tGlobal\ta22385559\n2025-03-07 10:16:41.456000\tMars Air\tseimatrun\t I emailed your customer service team. Let me know if you need the tracking number.\tLos Angeles\ta40341510\n2025-03-07 10:16:41.459000\tMars Air\tpapamurat\t Will flights be leaving Dallas for LA on February 24th?\tSavannah\ta32800270\n2025-03-07 10:16:41.462000\tMars Air\tsbaaronson\t madbee95 check the website before you go to the airport!\tLos Angeles\ta24675119\n2025-03-07 10:16:41.466000\tKepler22\tkevinforgoogle\tKepler22 already did that at the airport and 12 hrs Late Flightr its still not here! you guys are really killing me today. trying to stay positive..\tPhiladelphia\ta22667713\n2025-03-07 10:16:41.468000\tKepler22\tDJPartyMarty\tKepler22 unfortunately still on the Tarmac at fly2ohare and definitely missing my ride from flypdx GonnaBeALongNight\tSavannah\ta46183157\n2025-03-07 10:16:41.472000\tMars Air\tstopasyougo\t OMG FINALLY\tSavannah\ta32675388\n2025-03-07 10:16:41.474000\tMars Air\tHaraLillier\t I am all about the in flight artisanal cheese and wine pairing.\tSavannah\ta20121317\n2025-03-07 10:16:41.478000\tKepler22\tDJPartyMarty\tKepler22 Yo yo yo stuck on the tarmac for over 2 hours at fly2ohare ... Going to miss my ride at flypdx help please! HelpImStuck Kepler22\tSavannah\ta24302553\n2025-03-07 10:16:41.482000\tKepler22\tsamidip\tKepler22 Your ERI-ORD express connections are hugely popular .. now if only we could have an ERI-EWR hop! :)\tPhiladelphia\ta29794822\n2025-03-07 10:16:41.486000\tKepler22\tmoteodeats\tDecisions Decisions MandarinJourney Kepler22:  We'd love for you to try our service. We offer status match too. http://t.co/xbQqqbRgVF ^KP”\tOmaha \ta47549267\n2025-03-07 10:16:41.489000\tMars Air\tmctrees02\t save some for 871 tomorrow AM!\tPhiladelphia\ta5545849\n2025-03-07 10:16:41.493000\tMars Air\tlouisjenny\t is anyone doing anything there today?  Website is useless and no one is answering the phone.\tWashington DC\ta7561845\n2025-03-07 10:16:41.496000\tMars Air\tChrysiChrysic\t ChrysiChrysic your assistance yesterday when u ncelled Flightled our flight was to give us a hotel hotline  Shame on you!\tSavannah\ta30260626\n2025-03-07 10:16:41.499000\tKepler22\tPhilFromChico\tKepler22 is my favorite airline.\tNew York\ta47783196\n2025-03-07 10:16:41.502000\tMars Air\tChrysiChrysic\t shame on VA for making people spend money in stranded cities when other airlines are landing at JFK! Who will reimburse me?\tSavannah\ta871116\n2025-03-07 10:16:41.505000\tKepler22\tkevintgarner\tKepler22 A refund and flight vouchers or another flight on a different airline at your expense for today. 8 hour drive is very inconvenient\tPhiladelphia\ta9808359\n2025-03-07 10:16:41.509000\tMars Air\tMaverickGamersX\t we have a pilot! Sweet! D to SFO! :-)\tFollow/Retweet for giveaways!\ta37922629\n2025-03-07 10:16:41.512000\tMars Air\tmeladorri\t Flight from BOS &gt; LAS tomorrow was ncelled Flightled. No notifition; wait times are 1+ hour. Will you rebook on another airline?\tPhiladelphia\ta24610294\n2025-03-07 10:16:41.516000\tKepler22\tfuchsialipstick\tKepler22 v upset with your disability  \"services\". When I told one of your employees I was rrying medil equipment she was very rude.\tSavannah\ta27166985\n2025-03-07 10:16:41.519000\tKepler22\tEvan_Flay\tKepler22 It's an incredibly easy fix, but you would rather stay in your comfort zone, while I get forced out of mine.\tSeattle\ta19765842\n2025-03-07 10:16:41.522000\tMars Air\tAlMehairiAUH\t to start 5xweekly A319 flights from to Dallas DallasLoveField Austin on 28APR avgeek\tAbu Dhabi\ta36470244\n2025-03-07 10:16:41.525000\tMars Air\tRgulojr\t of course! I work for VirginAtlantic and I'm obsessed with the entire Virgin family!!\tChigo\ta35013647\n2025-03-07 10:16:41.528000\tKepler22\tginanotjenna\tKepler22 These are great fares!!!!!\tHoneoye Falls\ta31363669\n2025-03-07 10:16:41.532000\tKepler22\trombaa\tKepler22 thanks -- we filled it out. How's our luck with this? Is it common?\tSavannah\ta11408511\n2025-03-07 10:16:41.535000\tMars Air\tmoosekazmi\t thanks guys! Sweet route over the Rockies airplanemodewason\tPhiladelphia\ta6846780\n2025-03-07 10:16:41.538000\tKepler22\tmichaelsalinger\tKepler22 we needed them here asap. Will they make it on today's flight?\tPhiladelphia\ta24649399\n2025-03-07 10:16:41.541000\tKepler22\tginanotjenna\tKepler22 These are great fares!!!!!\tHoneoye Falls\ta46823662\n2025-03-07 10:16:41.544000\tKepler22\tmichaelsalinger\tKepler22 we needed them here asap. Will they make it on today's flight?\tPhiladelphia\ta36011047\n2025-03-07 10:16:41.547000\tKepler22\tJesseLitsch\tKepler22 so if I'm flying 1st class just one leg to Chigo but not on my long flight to China am I still able to use the lounge in Chigo\tSavannah\ta33721833\n2025-03-07 10:16:41.550000\tKepler22\tcyberhosed\tKepler22 load balancing system apparently down systemwide - major impact on all Kepler22 airlines flights. Was this a cyberattack?\tSavannah\ta10922906\n2025-03-07 10:16:41.553000\tKepler22\tfuchsialipstick\tKepler22 in addition, my first flight was delayed an hour and I'm arriving at my destination 8 hrs Late Flight.\tSavannah\ta12885760\n2025-03-07 10:16:41.555000\tKepler22\trunwithmiles\tKepler22 I am trying to book awards for September and need flights on aegeanairlines but they will not show even w/ many award seats availab\tSavannah\ta5105007\n2025-03-07 10:16:41.559000\tKepler22\trodneyondrums\tSouthwestAir doesn't charge ticket change fees. Do they not incur the same mysterious \"costs\" that you incur, Kepler22?\tAll over the damn place.\ta8874211\n2025-03-07 10:16:41.561000\tKepler22\tishowman\tKepler22 Lovely new plane from LGA to ORD but no power outlets?\tNew York\ta20927598\n2025-03-07 10:16:41.565000\tMars Air\tFreyaBevan_Fund\t VirginAtlantic GMA AmerinAir  n You Help ourprincess in need of some help in USA  🎀🇬🇧🎀🇺🇸🎀 http://t.co/778AzTDaer\tfreyabevanfundhotmail.com\ta20705115\n2025-03-07 10:16:41.569000\tKepler22\tCharlieGMoney\tKepler22 UA63 from Madrid arrived no agent mass confusion we sent to and fro by 3 UA employees. MaryJo was rude and unhelpful.\tPhiladelphia\ta49443115\n2025-03-07 10:16:41.572000\tKepler22\tDJPartyMarty\tKepler22 Yo yo yo stuck on the tarmac for over 2 hours at fly2ohare ... Going to miss my ride at flypdx help please! HelpImStuck Kepler22\tSavannah\ta49942550\n2025-03-07 10:16:41.576000\tKepler22\tBouleChitte\tKepler22 DM does not work what do I do?\tSavannah\ta20009116\n2025-03-07 10:16:41.579000\tMars Air\tmoosekazmi\t thanks guys! Sweet route over the Rockies airplanemodewason\tPhiladelphia\ta4649155\n2025-03-07 10:16:41.582000\tKepler22\ttbird12lv\tKepler22 by the time I finally get to Dallas I could have driven with less frustration and cheaper.\tColorado\ta41941506\n2025-03-07 10:16:41.585000\tMars Air\tAdamSinger\t do you miss me? Don't worry we'll be together very soon.\tSan Francisco\ta97933\n2025-03-07 10:16:41.590000\tMars Air\tHakenson_LIOX\t Dad on Segway is the best part of this whole infographic!\tPhiladelphia\ta39931294\n2025-03-07 10:16:41.594000\tMars Air\tNewsSWA\t Beats EPS Views, Takes On SouthwestAir VA LUV - Investor's Business Daily http://t.co/FLwmGDAHxu\tFL410\ta42407123\n2025-03-07 10:16:41.597000\tMars Air\tInuAtah\t classiq, luv Virgin Ameri. Greetingz\tAbuja\ta21675567\n2025-03-07 10:16:41.601000\tKepler22\tmattwbaker\tKepler22 - thanks for your help...got me what I need, but its an issue with _austrian . I guess I sit awhile longer.\tThe Center of My Universe\ta4865010\n2025-03-07 10:16:41.604000\tKepler22\tpjmartin44\tKepler22 gate announcement states delay due to maintenance yet app says Late Flight arriving aircraft  tell the truth! unfriendly\tSavannah\ta7137219\n2025-03-07 10:16:41.607000\tMars Air\tyvonnalynn\t I didn't today... Must mean I need to take another trip!\tLets Play\ta49977647\n2025-03-07 10:16:41.610000\tMars Air\tNazarFakih\t I applied for a position in flyLAXairport ,and I was wondering if you guys received my applition.\tSavannah\ta18190913\n2025-03-07 10:16:41.613000\tKepler22\tRichHays\tKepler22 kudos for not ncelled Flightling flights from DFW this morning.   Kepler22 usually first to panic...\tSavannah\ta7642200\n2025-03-07 10:16:41.617000\tKepler22\tGuggero\tKepler22 disappointed that u didnt honor my $100 credit given to me for ur mistakes. Taking my business elsewhere  ✌️out.\tNYC\ta8828828\n2025-03-07 10:16:41.620000\tKepler22\trholbrook\tKepler22: I don't re that a thehipmunk link showed me a \"wrong\" price on your site—it's your site &amp; responsibility to ensure correctness.\tNew York\ta8062754\n2025-03-07 10:16:41.623000\tKepler22\tnate2482\tKepler22 the internet is a great thing.  I am emailing executives in your company, maybe they will respond to me in a timely manner.\tPhiladelphia\ta22804200\n2025-03-07 10:16:41.629000\tMars Air\tNoelArtiles\t n’t access your website from Safari on iPhone 6. Seems to work on Mac and iPad. Need iPhone to add Passbook.\tPhiladelphia\ta32850551\n2025-03-07 10:16:44.635000\tKepler22\tEvan_Flay\tKepler22 Everyone around us is sitting with their friends and family members. They booked their tickets in October and December. We bought\tSeattle\ta1555611\n2025-03-07 10:16:44.639000\tKepler22\trdowning76\tKepler22 thanks\tusa\ta8026300\n2025-03-07 10:16:44.643000\tKepler22\tsothenbethsaid\tKepler22 has not responded to my various requests for contact numbers, does anyone know the UK customer service number for Kepler22Airlines\tNottingham\ta49240812\n2025-03-07 10:16:44.647000\tKepler22\tRichHays\tKepler22 kudos for not ncelled Flightling flights from DFW this morning.   Kepler22 usually first to panic...\tSavannah\ta40992289\n2025-03-07 10:16:44.650000\tKepler22\tColtonWoytas\tKepler22 Yes. Doesn't make that mistake any less absurd. Doesn't change the fact that I'm very inconveniently missing my luggage tonight.\tNY\ta42732529\n2025-03-07 10:16:44.654000\tKepler22\tJoshuaIsWrong\tKepler22 441, which also had 1 working WC in coach. Good thing this bird landed ahead of schedule. I have to use the WC stat.\tAustin · LA · London · NY · SF\ta17267073\n2025-03-07 10:16:44.658000\tKepler22\tnydia376\tKepler22 thanks\tUSA\ta26251142\n2025-03-07 10:16:44.661000\tMars Air\tmlorenzen\t I paid the premium to fly you across the country, you ncelled Flight my flight and offer no check fee or upgrade love? Sad face :(\tPhiladelphia\ta18909325\n2025-03-07 10:16:44.665000\tKepler22\tlsalazarll\tKepler22 Delayed due to lack of crew and now delayed again beuse there's a long line for deicing... Still need to improve service Kepler22\tSavannah\ta17495944\n2025-03-07 10:16:44.668000\tMars Air\tbeasharif\t love you guys, but pls get some direct routes LAS to AUS!\tThe World\ta2377481\n2025-03-07 10:16:44.671000\tKepler22\tgguilber\tKepler22 system failure again = bad trend.  Software projects are like flying an airplane; there's no such thing as an emergency takeoff.\tSavannah\ta31494184\n2025-03-07 10:16:44.675000\tMars Air\tMarcSM\t had me at their safety video . . . http://t.co/CqMm7nuE9m  LOVED my first cross country flight. livewelltraveled sytycd\tNew York\ta46706761\n2025-03-07 10:16:44.678000\tMars Air\twmrrock\t how come you don't have an iPhone app? Still using and making me waste paper.\tCT\ta45505022\n2025-03-07 10:16:44.681000\tKepler22\tlovejodierose\tKepler22 please upload the March on-demand entertainment listing on your website! ✈️\tMelbourne\ta30303585\n2025-03-07 10:16:44.684000\tMars Air\tintlwriter\t I rang, but there is a wait for 35 minutes!! I n book the same ticket through a vendor, fix your site\t the moment in New Delhi\ta43711511\n2025-03-07 10:16:44.688000\tKepler22\tBouleChitte\tKepler22 not able to DM you my confirmation number\tSavannah\ta12352190\n2025-03-07 10:16:44.691000\tMars Air\tjarrydosborne\t please provide status for flight 769.  I nt imagine it's on time as the Web indites  dude to weather here and/or Dallas\tNew York\ta5192436\n2025-03-07 10:16:44.694000\tKepler22\tcristobalwong\tKepler22 I'm trying to get to my final destination, we need compensation. Just about 2hrs of personal time wasted.\tSan Francisco Bay Area\ta12653045\n2025-03-07 10:16:44.698000\tMars Air\teganist\t thanks for that. Been needing a way to make those Austin trips from D, and now you've come through!\tWashington D.C.\ta27273830\n2025-03-07 10:16:44.701000\tMars Air\tmiaerolinea\t😎 RT : You’ve met your match. Got status on another airline? Upgrade (+restr): http://t.co/RHKaMx9VF5. http://t.co/PYalebgkJt\tWorldwide\ta29017298\n2025-03-07 10:16:44.704000\tMars Air\tstopasyougo\t OMG FINALLY\tSavannah\ta16643313\n2025-03-07 10:16:44.707000\tMars Air\tAlyssaJenS\t I see what you did there ;)\tPhiladelphia\ta2676714\n2025-03-07 10:16:44.710000\tKepler22\tThe5y5Adm1n\tKepler22 thank you. Been trying for two days to set this up.\tSavannah\ta5473430\n2025-03-07 10:16:44.713000\tMars Air\tAUStinAirport\t announces new nonstop connecting AUStinAirport &amp; DallasLoveField, $39 intro: http://t.co/qXnOaQtYN8 http://t.co/JK7qmdfqgf\tPhiladelphia\ta20124135\n2025-03-07 10:16:44.716000\tKepler22\tfitztango\tKepler22 iah to charlotte. Baggage claim rep latrice h. customerservice non existent, Ignored customer then inappropriately touched customer\tPhiladelphia\ta15971003\n2025-03-07 10:16:44.719000\tMars Air\tRySnlon\t As one of the travelers affected by the Boston storm, I'm shocked at Virgin's complete apathy toward their customers.\tSavannah\ta32069911\n2025-03-07 10:16:44.723000\tKepler22\tMateyush\tKepler22 I asked a legitimate question about systemwide vs. lolized problems, and got back an unreLate Flightd copy/paste. You n do better.\tOmaha\ta18705284\n2025-03-07 10:16:44.727000\tKepler22\tDarquenloveli\tKepler22 it's highly unprofessional for you to overbook a flight by 12 seats &amp;feel that I should rearrange my schedule for your mismanagement\tTexas\ta3631670\n2025-03-07 10:16:44.730000\tKepler22\tlindaSWC\tKepler22 at its worse. n't figure how to pack plane, screws up connectns then claims no hotl rooms in San Fran for stranded pax. Way to go!\tSavannah\ta1448148\n2025-03-07 10:16:44.734000\tKepler22\tNikki62878\tKepler22 I am trying to find out if the loaner seat is new or used, a used r seat is illegal according to safety regulations\tSavannah\ta19790971\n2025-03-07 10:16:44.737000\tMars Air\tJKF1897\t completely awesome experience last month BOS-LAS nonstop. Thanks for such an awesome flight and depart time. VAbeatsJblue\tSavannah\ta580615\n2025-03-07 10:16:44.740000\tMars Air\tnPOREOTICS\t fav airline\tPhiladelphia\ta27662068\n2025-03-07 10:16:44.744000\tMars Air\tKindofLuke\t I like the customer service but a 40 min delay just for connecting passengers seems too long. VA370\tSavannah\ta49748706\n2025-03-07 10:16:44.747000\tKepler22\tTwist_OP\tKepler22 ua1673 still waiting! Supposed to depart 9:08\tMidwest\ta2621349\n2025-03-07 10:16:44.750000\tMars Air\tBigRichTexasPam\t why ncelled Flight flights today? No precipitation to be sred of!  ❄️❄️❄️\tPortland\ta37968518\n2025-03-07 10:16:44.754000\tKepler22\tcristobalwong\tKepler22 Asked Flight attendant what typil compensation would be &amp; says we might get free TV. Unacceptable\tSan Francisco Bay Area\ta15576294\n2025-03-07 10:16:44.757000\tKepler22\tmichaelsalinger\tKepler22 tag numbers 0016 964012, 0016 964077, 0016 964078 - let's find these bags.\tPhiladelphia\ta30521022\n2025-03-07 10:16:44.760000\tMars Air\tMsReese\t moved my seat with no notice. \"Better seat\" is bin select not behind the row I selected👎 DISAPPOINTED\tLos Angeles\ta17738150\n2025-03-07 10:16:44.764000\tMars Air\tHenryLucero\t requested window seat and confirmed window but got stuck in middle seat. Not a good way to treat silver member😒\tPhiladelphia\ta2548194\n2025-03-07 10:16:44.768000\tMars Air\t_kristenicole_\t ok! first time flying with you tonight :)\tOmaha\ta26929845\n2025-03-07 10:16:44.771000\tKepler22\tmichaelsalinger\tKepler22 did our bags leave Washington yet? That would be convenient seeing as we left there a day ago. Kepler22Airlines lostluggage\tPhiladelphia\ta47125389\n2025-03-07 10:16:44.774000\tMars Air\t2v\t wish you flew out of Atlanta... Soon?\tLos Angeles / Atlanta\ta34251238\n2025-03-07 10:16:44.778000\tMars Air\tjoyabsalon\t ladygaga rrieunderwood Julie Andrews all the way though ladygaga was very impressive! NO to rrieunderwood\tNorthern Virginia\ta11033831\n2025-03-07 10:16:44.780000\tKepler22\tAnntasia\tKepler22 just wanted to let you know how wonderful Rosetta the gate agent was working flight 6457 Dan to Ase. Let her know she wasappreciated\tNew Jersey/Maryland\ta32000078\n2025-03-07 10:16:44.784000\tKepler22\tmichaelsalinger\tKepler22 how we looking on getting those bags to Lusaka\tPhiladelphia\ta33210905\n2025-03-07 10:16:44.787000\tMars Air\tkhartline\t I'd love to know what your policy is for damaged luggage.\tLas Vegas\ta7723123\n2025-03-07 10:16:44.790000\tMars Air\twaytogopdx\t still waiting to see  Starryeyes_Dev_  😞\tPhiladelphia\ta20974571\n2025-03-07 10:16:44.794000\tKepler22\txRaetherine\tKepler22 He needs to get to home the 24th, they're telling him it'll be the 25th  night. Is there compensation or anything that n be done?\tSavannah\ta19435184\n2025-03-07 10:16:44.797000\tMars Air\t_kristenicole_\t ok! first time flying with you tonight :)\tOmaha\ta45722648\n2025-03-07 10:16:44.800000\tMars Air\tAirlineFuel\t posts second consecutive full-year net profit - ATWOnline http://t.co/tvB5zbzVhg\tGlobal\ta12863553\n2025-03-07 10:16:44.803000\tMars Air\telaurawrr\t n you please have flights in  SJC ? I have no choice but to fly Southwest to Vegas 😩😭\tSavannah\ta3780653\n2025-03-07 10:16:44.806000\tKepler22\tFreedomFilmNJ\tKepler22 terminal at MIA should have food open before 5am esp when there are flights at 6am. Two hours early like recommended. n't eat.\tNew York\ta41052474\n2025-03-07 10:16:44.809000\tMars Air\tJKF1897\t completely awesome experience last month BOS-LAS nonstop. Thanks for such an awesome flight and depart time. VAbeatsJblue\tSavannah\ta38956619\n2025-03-07 10:16:44.812000\tMars Air\tBoards707\t congrats, you just got all my business from EWR to SFO/LAX.  you united fl1289 SFO/EWR was the clincher...\tPhiladelphia\ta3551366\n2025-03-07 10:16:44.816000\tMars Air\tKallysAlbertSr\t That's classy.\tUSA\ta35939659\n2025-03-07 10:16:44.819000\tKepler22\tChrisNielsen2\tKepler22 I received 1 bag last night, I am still missing the other one.\tPhiladelphia\ta15451669\n2025-03-07 10:16:44.822000\tKepler22\tDJPartyMarty\tKepler22 unfortunately still on the Tarmac at fly2ohare and definitely missing my ride from flypdx GonnaBeALongNight\tSavannah\ta41827365\n2025-03-07 10:16:44.825000\tMars Air\tHeatherWhoo\t my drivers license is expired by a little over a month. n I fly Friday morning using my expired license?\tSavannah\ta42308419\n2025-03-07 10:16:44.829000\tMars Air\tSoleXclusive415\t shrinerack Seattle bound. Wifey got me the duffle for vday. She's a keeper!!! Holla!!! http://t.co/JlOIbLnair\tBay Area\ta34398616\n2025-03-07 10:16:44.832000\tMars Air\tlexiesalas\t trying to book a flight &amp; your site is down 😁\tBAYAREA✈️NYC\ta24137284\n2025-03-07 10:16:44.835000\tMars Air\tgrantbrowne\t Is flight 769 on it's way? Was supposed to take off 30 minutes ago. Website still shows \"On Time\" not \"In Flight\". Thanks.\tWorldwide\ta2972093\n2025-03-07 10:16:44.839000\tKepler22\tJoshuaIsWrong\tKepler22 441, which also had 1 working WC in coach. Good thing this bird landed ahead of schedule. I have to use the WC stat.\tAustin · LA · London · NY · SF\ta23515395\n2025-03-07 10:16:44.842000\tMars Air\trlosondrums\t Very nicely done. 👏\tLas Vegas\ta14427727\n2025-03-07 10:16:44.846000\tMars Air\tlouisjenny\t is anyone doing anything there today?  Website is useless and no one is answering the phone.\tWashington DC\ta43869096\n2025-03-07 10:16:44.849000\tKepler22\thellojennizzle\tKepler22 Flight attendant never served me my beverage (tea), and not once checked up on me. What gives? ua6076 notcool\tCornfields\ta38287427\n2025-03-07 10:16:44.852000\tMars Air\tJKF1897\t completely awesome experience last month BOS-LAS nonstop. Thanks for such an awesome flight and depart time. VAbeatsJblue\tSavannah\ta45936810\n2025-03-07 10:16:44.855000\tMars Air\ttaygarrett\t what happened to direct flights from SFO-FLL? Looking in May, only see connecting help dontdothistome\tsan francisco\ta47100696\n2025-03-07 10:16:44.859000\tKepler22\tnydia376\tKepler22 yes, a paper voucher that I got on January 26th 2015\tUSA\ta25458655\n2025-03-07 10:16:44.862000\tMars Air\tColorrtel\t I n't check in or add a bag. Your website isn't working. I've tried both desktop and mobile http://t.co/AvyqdMpi1Y\tPhiladelphia\ta7206458\n2025-03-07 10:16:44.865000\tMars Air\tjennifer_ron\t You have the best flight attendant ever!!! http://t.co/PxdEL1nq3l\tPhiladelphia\ta16977809\n2025-03-07 10:16:44.869000\tKepler22\tkathryn217628\tKepler22 n someone please explain the process of of what happens to property found on a plane after passengers leave at Heathrow ?\tSavannah\ta32840007\n2025-03-07 10:16:44.873000\tMars Air\tAlisonK33774854\t I like the TV and interesting video . Just disappointed in ncelled Flightled flight when other flights went out to jfk on Saturday .\tSavannah\ta34497614\n2025-03-07 10:16:44.877000\tMars Air\tBrandonS002\t. not only was it great, but you return my lls the day after. Couldn't ask for more. myVXexperience\tNew York\ta5098708\n2025-03-07 10:16:44.880000\tMars Air\twmrrock\t on VX399 from JFK to LA - dirty plane - not up to your standards.\tCT\ta3488888\n2025-03-07 10:16:44.883000\tMars Air\tEl_Nel_81\t I requested a mileage challenge for status several weeks ago online but haven't heard back. How do I get help with this?\tSavannah\ta39060454\n2025-03-07 10:16:44.886000\tKepler22\tmbarnas\tKepler22 airlines is the absolute worst. They have no idea what they are doing. neveragain Kepler22Airlines\tNew York\ta21552514\n2025-03-07 10:16:44.889000\tMars Air\tTheDuchessSF\t - amazing customer  service, again! 💕💕 RaeAnn in SF - she's the best! customerservice virginameri flying\tOnline\ta16767211\n2025-03-07 10:16:44.893000\tKepler22\tKelley_Myers\tKepler22 an idea: monitor mileage members travel patterns enough to know when they change jobs/lose status...and make the transition easier.\tPacific Northwest\ta23108131\n2025-03-07 10:16:44.896000\tKepler22\tfuchsialipstick\tKepler22 your announcement for pre boarding only addresses mobility. My disability requires me to travel with a lot of stuff. Do I preboard?\tSavannah\ta23150737\n2025-03-07 10:16:44.899000\tMars Air\tnoelduan\t Hi, Virgin! I'm on hold for 40-50 minutes -- are there any earlier flights from LA to NYC tonight; earlier than 11:50pm?\tMemphis\ta23682557\n2025-03-07 10:16:44.902000\tMars Air\tpapamurat\t are flights leaving Dallas for Seattle on time Feb 24?\tSavannah\ta21354252\n2025-03-07 10:16:44.905000\tMars Air\tGeorgettePierre\t thank you\tyour third eye...\ta17040889\n2025-03-07 10:16:44.908000\tKepler22\tfortytoo\tKepler22 tried lling too, but w/25 min phn wait means we'd miss options anyway\tPhiladelphia\ta13913546\n2025-03-07 10:16:44.912000\tKepler22\tfuchsialipstick\tKepler22 v upset with your disability  \"services\". When I told one of your employees I was rrying medil equipment she was very rude.\tSavannah\ta2345157\n2025-03-07 10:16:44.916000\tKepler22\tdrewziIIa\tKepler22 flight ua3576, gate b1. And tell ray I somehow made it on to the 736 flight out of IAH and didn't have to wait for the 917 one. :)\tSavannah\ta43441180\n2025-03-07 10:16:44.919000\tKepler22\tryanaround\tKepler22 someone needs to DM me and resolve this correctly. Extremely disappointed with the service I received. Terrible management.\tSan Francisco\ta13138152\n2025-03-07 10:16:44.922000\tMars Air\tmattejacob\t you got cheese pLate Flights too.\tNew York\ta2193301\n2025-03-07 10:16:44.925000\tMars Air\tHakenson_LIOX\t Dad on Segway is the best part of this whole infographic!\tPhiladelphia\ta25149722\n2025-03-07 10:16:44.928000\tMars Air\titsjulianking\t should use this in their next airline commercial lol :: http://t.co/pXEXIlSjBs\tMemphis\ta3950035\n2025-03-07 10:16:44.930000\tKepler22\twhitterbug\tYes!! Thanks so much!!! 💜“Kepler22: whitterbug We see you spoke with our Reservations team and they've reinstated the flight. Thanks. ^EY”\tPhiladelphia\ta32460227\n2025-03-07 10:16:44.934000\tKepler22\tsothenbethsaid\tKepler22 hence why I've been asking for the customer service phone number so I n speak to a real person to get this sorted out\tNottingham\ta49794048\n2025-03-07 10:16:44.938000\tMars Air\tMISSGJ\t why are your first fares in May over three times more than other rriers when all seats are available to select???\tSavannah\ta31421125\n2025-03-07 10:16:44.941000\tMars Air\tchase_f\t Done, but I need the receipt ASAP. Could you please help? 150219-000114\tPhiladelphia\ta45630946\n2025-03-07 10:16:44.945000\tMars Air\tjennifer_ron\t You have the best flight attendant ever!!! http://t.co/PxdEL1nq3l\tPhiladelphia\ta20517520\n2025-03-07 10:16:44.948000\tKepler22\thmansfield\tKepler22 I understand, but it's tough when there is no way to get to the airport w/o serious risk of an accident. It's a steep price.\tPhiladelphia\ta46773727\n2025-03-07 10:16:44.951000\tMars Air\tchrisdpatton\t , am I dreaming? Did you really just open up a route between Dallas and Austin?! And does this mean Houston might be next?\tPhiladelphia\ta33398012\n2025-03-07 10:16:44.957000\tKepler22\tnydia376\tKepler22 thanks\tUSA\ta44329617\n2025-03-07 10:16:44.961000\tKepler22\tfranciscogonima\tKepler22 I used to be a committed ContinentalAirlines flyer until merger. I remember now why I switched to SouthwestAir CommunitionFail\tPhiladelphia\ta43124994\n2025-03-07 10:16:44.966000\tKepler22\tDarquenloveli\t“Kepler22: Darquenloveli We regret to hear this. Please let us know if you need assistance. ^KN” I was finally able to secure my seat. Thx\tTexas\ta9784470\n2025-03-07 10:16:44.970000\tMars Air\tchase_f\t I need a receipt for a flight change. n you send one?\tPhiladelphia\ta49185819\n2025-03-07 10:16:47.976000\tMars Air\tnoelduan\t Hi, Virgin! I'm on hold for 40-50 minutes -- are there any earlier flights from LA to NYC tonight; earlier than 11:50pm?\tMemphis\ta38915985\n2025-03-07 10:16:47.980000\tMars Air\tLizaUtter\t👍👍✈️✈️💗 When are you guys going to start flying to Paris? : LizaUtter You're welcome.”\tPhiladelphia\ta34595706\n2025-03-07 10:16:47.983000\tKepler22\tkbleggett\tKepler22 seriously fail on making strangers share a room\tPhiladelphia\ta35779544\n2025-03-07 10:16:47.987000\tMars Air\tmlorenzen\t I paid the premium to fly you across the country, you ncelled Flight my flight and offer no check fee or upgrade love? Sad face :(\tPhiladelphia\ta42493364\n2025-03-07 10:16:47.990000\tMars Air\tRecessionista\t Thanks for your great customer service today &amp; for helping me get all my travel sorted out!\tPhiladelphia\ta49245633\n2025-03-07 10:16:47.993000\tMars Air\tTravelzoo\t Congrats on winning the Travelzoo award for Best Deals from an Airline (US) http://t.co/kj1iljaebV\tNew York\ta17247522\n2025-03-07 10:16:47.997000\tKepler22\tthetonyblank\tKepler22 I appreciate your efforts getting me home!\tPhiladelphia\ta24185077\n2025-03-07 10:16:48.000000\tKepler22\tmoteodeats\tDecisions Decisions MandarinJourney Kepler22:  We'd love for you to try our service. We offer status match too. http://t.co/xbQqqbRgVF ^KP”\tOmaha \ta15247051\n2025-03-07 10:16:48.003000\tKepler22\tjkentakula\tKepler22 crashed trying to check in.\tSavannah\ta49002280\n2025-03-07 10:16:48.007000\tKepler22\t747_TJ\tKepler22 Thanks for the lack of help and the nned response from the 1K desk!\tSavannah\ta20769317\n2025-03-07 10:16:48.010000\tKepler22\tCecilia_stories\tKepler22 A Tourist Wonder: Super Tides and Tide of the Century at French and U.K coasts: http://t.co/gXdqORtsS0\tLuxembourg\ta1042862\n2025-03-07 10:16:48.013000\tKepler22\tPeter_Abrahamse\tKepler22 ZCC82U ncelled Flight flight 16h in advance??? Need connect flight reschedule so the link isn't helping. Help!? Gf waited months to see me.\tSavannah\ta44944239\n2025-03-07 10:16:48.016000\tKepler22\tSri_Philips\tKepler22 common!! keep your paper work ready and don't delay our flights(1585)and meetings ChooseChigo\tPhiladelphia\ta24598831\n2025-03-07 10:16:48.020000\tKepler22\tNikki62878\tKepler22 I did start a claim but 8-10 weeks is unrealistic, am I really supposed to go that long with out a r seat for my child.Ridiculous!\tSavannah\ta11129297\n2025-03-07 10:16:48.023000\tKepler22\t_Emilky_\tKepler22  up, then voided my ticket, and KEPT MY MONEY.  Not even an apology. I will never fly with your airline again. Kepler22Airlines\tPhiladelphia\ta19862013\n2025-03-07 10:16:48.026000\tKepler22\tcolbyterina\tKepler22 iCloud it is not there yet -- PLEASE HELP 917 703 1472\tlalaland\ta14547278\n2025-03-07 10:16:48.030000\tMars Air\tArtenis15\t You have any flights flying into Boston tomorrow? I need to be home and you ncelled Flightled my flight and didn't do anything\tMemphis\ta49040560\n2025-03-07 10:16:48.033000\tKepler22\tmattscottcrum\tKepler22 or flysaa has lost my baggage… heard different things from different employees of Kepler22. flysaa has said nothing.\tPhiladelphia\ta14073346\n2025-03-07 10:16:48.036000\tMars Air\ttraveldg\t Nice, Lofty View flyLAXairport. SilverStatus http://t.co/F4Tp0dAwbd\tSan Francisco\ta23801172\n2025-03-07 10:16:48.039000\tMars Air\tcjmcginnis\t yes, nearly every time I fly VX this “ear worm” won’t go away :)\tSan Francisco \ta3565756\n2025-03-07 10:16:48.043000\tKepler22\tEmily_VII\tKepler22 you are one great airline ❤️\tSavannah\ta47158595\n2025-03-07 10:16:48.046000\tMars Air\trtw4\t Thanks for a great flight from LA to Boston! Pilots did a great job landing in the snow. n we go back to LA now? seriously\tPhiladelphia\ta10925108\n2025-03-07 10:16:48.049000\tKepler22\txRaetherine\tKepler22 Twitter isn't letting me DM you..\tSavannah\ta16360751\n2025-03-07 10:16:48.052000\tKepler22\tCharlieGMoney\tKepler22 Well the bar is set low! You guys are really good at the apology game! What will change? When will u guys learn?\tPhiladelphia\ta24840733\n2025-03-07 10:16:48.055000\tMars Air\tsmartwatermelon\t SFO-PDX schedule is still MIA.\tPhiladelphia\ta29170368\n2025-03-07 10:16:48.058000\tKepler22\tslandail\tKepler22 Gate agent hooked me up with alternate flights. If you have a way to PREVENT the constant issues, that would rock.\tPhiladelphia\ta1526969\n2025-03-07 10:16:48.061000\tMars Air\tsmartwatermelon\t SFO-PDX schedule is still MIA.\tPhiladelphia\ta29123166\n2025-03-07 10:16:48.065000\tMars Air\tChrysiChrysic\t ChrysiChrysic your assistance yesterday when u ncelled Flightled our flight was to give us a hotel hotline  Shame on you!\tSavannah\ta18626731\n2025-03-07 10:16:48.068000\tKepler22\tvaficionado\tKepler22 It's still a valid flight. Just seems strange to delay for Late Flight inbound crew,  7 hours from now, when the plane is already here.\tPhiladelphia\ta35238554\n2025-03-07 10:16:48.071000\tKepler22\tdiscobiscuit63\tKepler22 thnx for quick reply but don't think you n assist. Our intl grp will be put to considerable inconvenience today.\tSavannah\ta13928734\n2025-03-07 10:16:48.074000\tKepler22\ttiffy_mac\tKepler22 you are easily the worst company I have ever experienced. You have lost someone's personal possessions &amp; you couldn't re less!....\tPhiladelphia\ta20826634\n2025-03-07 10:16:48.077000\tKepler22\tRyanMagovs\tKepler22 Late Flight to Denver, Late Flight to Newark...let's not even get into the disaster that was checking bags. Unacceptable.\tSavannah\ta4630216\n2025-03-07 10:16:48.080000\tKepler22\tfairplay500\tKepler22 Outbound 2 bags 70 lbs bags Returning home 1 bag 50 lbs. What is your logic? And WHY? Am I writing to a Machine? Human HELP required\tPortland\ta2520324\n2025-03-07 10:16:48.084000\tKepler22\tzaudrey\tKepler22 I've never experienced worst customer service. Placing blame on codeshare partners and not assuming responsibility is unacceptable\tSavannah\ta40915061\n2025-03-07 10:16:48.087000\tMars Air\tdhepburn\t Well, I didn't…but NOW I DO! :-D\tSan Diego\ta36701096\n2025-03-07 10:16:48.090000\tMars Air\taaronkurlander\t twitter team. you guys killed it for rescheduling me asap. thank you!\tNew York\ta17395809\n2025-03-07 10:16:48.094000\tMars Air\tAirlineFuel\t gives positive outlook, but sees increased competition - Reuters http://t.co/jEu7Od3eYJ\tGlobal\ta2161161\n2025-03-07 10:16:48.097000\tMars Air\tJCervantezzz\t Are the hours of operation for the Club at SFO that are posted online current?\tSan Francisco\ta1993989\n2025-03-07 10:16:48.100000\tKepler22\tMirandaAtx\tKepler22 Exhausted &amp; frustrated! Link to a FB post abt my travel issue https://t.co/LaRKC8vc4s\tPhiladelphia\ta15583774\n2025-03-07 10:16:48.104000\tKepler22\tPhilFromChico\tKepler22 is my favorite airline.\tNew York\ta41899920\n2025-03-07 10:16:48.107000\tKepler22\tmeronsmith17\tKepler22 I will give you one thing, you are consistent but unfortunately you are consistent at not doing your job well AlwaysDelayedOnKepler22\tSavannah\ta19514095\n2025-03-07 10:16:48.110000\tMars Air\tGabriellaDago\t thank goodness!! Also, see you friday, nwk&gt;sf.. BOOM!\tNew York\ta12781065\n2025-03-07 10:16:48.114000\tMars Air\tdrsaadiaim\t your inflight team makes the experience amazing!\tBo Raton FL 33434\ta37257866\n2025-03-07 10:16:48.119000\tKepler22\turno12\tKepler22 just 1 last thing. U guys shouldn't be charging $ for drinks on a transatlantic flight\tbonkers in Yonkers\ta13158784\n2025-03-07 10:16:48.122000\tMars Air\tMerchEngines\t Is it me, or is your website down?  BTW, your new website isn't a great user experience.  Time for another redesign.\tPhiladelphia\ta15309164\n2025-03-07 10:16:48.126000\tKepler22\tZgrinch\tKepler22 rebooting Chigo dispatch system, need pivotalcf as I'm tired of sitting on planes\tPhiladelphia\ta7942918\n2025-03-07 10:16:48.129000\tKepler22\tnydia376\tKepler22 thanks\tUSA\ta31685315\n2025-03-07 10:16:48.133000\tKepler22\thmansfield\tKepler22 I understand, but it's tough when there is no way to get to the airport w/o serious risk of an accident. It's a steep price.\tPhiladelphia\ta5137403\n2025-03-07 10:16:48.135000\tMars Air\tcontimike\t I nnot even open my laptop in seat 4C and I paid a premium for this?!!   Let me out of here!\tNew York\ta24368043\n2025-03-07 10:16:48.138000\tMars Air\tBobGlavinVO\t ladygaga rrieunderwood After last night tribute SoundOfMusic Osrs2015 ladygaga! I think rrieunderwood agree\tNew York\ta29081374\n2025-03-07 10:16:48.141000\tMars Air\tChrysiChrysic\t - too many apologies! You r the worse airlines! Don't even respond to your cudtomers\tSavannah\ta18290156\n2025-03-07 10:16:48.144000\tKepler22\thandsomanderson\tKepler22 has once again let me down. Don't think I've ever flown with them and not had problems. Worst airline period.\tPhiladelphia\ta15926089\n2025-03-07 10:16:48.148000\tKepler22\tfamily6travels\tKepler22 thank you. We are signed up for notifitions. We shall watch and wait! ❄️❄️\tSavannah\ta25342228\n2025-03-07 10:16:48.150000\tKepler22\tbrando_787\tKepler22 like continental's chicken feat fairs\tPhiladelphia\ta2844433\n2025-03-07 10:16:48.154000\tKepler22\tCoachJoette\tKepler22 why no preferred security line anymore. My TSA pre-check didn't pull on my SilverAirways partner flight! Platinum spoiled\tTampa\ta33963699\n2025-03-07 10:16:48.156000\tKepler22\tjasonpblakey\tKepler22 currently on board so not now. Check in was terrible. Staff rude. Expensive luggage thrown around etc.\tSavannah\ta24895667\n2025-03-07 10:16:48.159000\tKepler22\tthetonyblank\tKepler22 despite shaky connections, looks like I'll get home tonight. Great job, Kepler22 - was touch and go for a while..\tPhiladelphia\ta12591909\n2025-03-07 10:16:48.162000\tKepler22\tMiela4Mizzou\tKepler22 you guys need some serious training in customer service. Too many better options to put up with the way you guys handle ur mistakes\tSavannah\ta25476378\n2025-03-07 10:16:48.166000\tKepler22\tpjmartin44\tKepler22 how n your app show arriving aircraft is early but departing flight is delayed due to Late Flight arriving aircraft? unfriendly\tSavannah\ta21800459\n2025-03-07 10:16:48.169000\tKepler22\tkathryn217628\tKepler22 n someone please explain the process of of what happens to property found on a plane after passengers leave at Heathrow ?\tSavannah\ta46975790\n2025-03-07 10:16:48.172000\tMars Air\tlivingfitly\t flight home to dc sunset globe in' backtowinter back to work! refreshed http://t.co/VX9vBCTdLf\tPhiladelphia\ta31663475\n2025-03-07 10:16:48.175000\tKepler22\tFreedomFilmNJ\tKepler22 terminal at MIA should have food open before 5am esp when there are flights at 6am. Two hours early like recommended. n't eat.\tNew York\ta37066020\n2025-03-07 10:16:48.179000\tKepler22\ttpensari\tKepler22 your customer service is terrible! Stood inline 3 hours no flights and 4 hours Late Flightr still no bagdisgutedindenver\tSavannah\ta41182145\n2025-03-07 10:16:48.183000\tKepler22\tKalbozey\tKepler22 we were not given the option of using our Kepler22 TravelBank in a recent Flight Booking Problems! Any help in using or recouping these funds? Thanks!\tSouthern lifornia\ta11214324\n2025-03-07 10:16:48.186000\tKepler22\tmichaelsalinger\tKepler22 keep me updated. Let me know that the bags make the flight to j-burg\tPhiladelphia\ta21961000\n2025-03-07 10:16:48.190000\tMars Air\tpaulhting\t Trying to make the change in advance (not just 24 hours prior)…tried it online earlier and it wanted $300 in change fees.\tPhiladelphia\ta8826054\n2025-03-07 10:16:48.193000\tKepler22\tnydia376\tKepler22 yes, David Allan send an email with this number (KMM24999563V99860L0KM) and se8719519\tUSA\ta23923919\n2025-03-07 10:16:48.196000\tMars Air\tNoelArtiles\t n’t access your website from Safari on iPhone 6. Seems to work on Mac and iPad. Need iPhone to add Passbook.\tPhiladelphia\ta35271631\n2025-03-07 10:16:48.199000\tKepler22\ttbird12lv\tKepler22 by the time I finally get to Dallas I could have driven with less frustration and cheaper.\tColorado\ta46970238\n2025-03-07 10:16:48.202000\tMars Air\tjhen_d\t thank you! See y'all soon! I'm excited to see the expansion of destinations. Spread those wings!\tPhiladelphia\ta3288476\n2025-03-07 10:16:48.206000\tKepler22\tSEGrower\tKepler22 No, I need you guys to not over book planes. It's not a concern, I'll just travel with someone else moving forward.\tPhiladelphia\ta28952409\n2025-03-07 10:16:48.209000\tMars Air\twildtdad\t is your website ever coming back online?\tSavannah\ta47259084\n2025-03-07 10:16:48.212000\tMars Air\tGottAmanda\t plz help me win my bid upgrade for my flight 2/27 LAX---&gt;SEA!!!  🍷👍💺✈️\tLos Angeles\ta25549103\n2025-03-07 10:16:48.215000\tKepler22\tnydia376\tKepler22 yes, a paper voucher that I got on January 26th 2015\tUSA\ta20243510\n2025-03-07 10:16:48.218000\tKepler22\tmichaelsalinger\tKepler22 how we looking on getting those bags to Lusaka\tPhiladelphia\ta34476585\n2025-03-07 10:16:48.221000\tKepler22\tOohLaLa09\tKepler22 yes, we've been with the agents for the last 50 minutes. One of the agents have been very rude, but thankfully Ladan has been nice.\tPortland\ta24327041\n2025-03-07 10:16:48.225000\tMars Air\tGSkiWeek\t Sent a couple messages to the email you provided but to no avail. Will try again next year. Cheers.\tPhiladelphia\ta18529331\n2025-03-07 10:16:48.228000\tMars Air\titsGREEKSAUSAGE\t I just did, how n I DM? Do u have to also add me?\tPhiladelphia\ta14785436\n2025-03-07 10:16:48.231000\tKepler22\tEvan_Flay\tKepler22 I guess that's too much ask, huh?\tSeattle\ta36582098\n2025-03-07 10:16:48.235000\tKepler22\talikat9220\tKepler22 good to know you will open the closed doors for \"premier passengers\" after safety briefings on delayed flights. annoyed.\tSavannah\ta34543632\n2025-03-07 10:16:48.238000\tKepler22\tteamcrafty\tKepler22 thank you\tGrand Rapids\ta24159139\n2025-03-07 10:16:48.241000\tMars Air\trlos89178\t when are you putting some great deals from PDX to LAS or from LAS to PDX show me your love! http://t.co/enIQg0buzj\tSavannah\ta1111589\n2025-03-07 10:16:48.244000\tKepler22\tfrqnttraveler\tKepler22 awesome I'll book my next Christmas vatinn this December any other ways you want to devalue mileage plus.\tlifornia\ta43044659\n2025-03-07 10:16:48.247000\tMars Air\tusagibrian\t And now the flight Flight Booking Problems site is totally down. Folks, what is the problem?\tSan Francisco \ta11012027\n2025-03-07 10:16:48.249000\tMars Air\tlakebrahlands\t ​ is flying from Love to Austin now. That is most excellent news.\tPhiladelphia\ta363863\n2025-03-07 10:16:48.253000\tMars Air\tTLoui143\t Your planes are really pretty. Just thought u should know that. :)\tOut to Brunch with Kanyewest.\ta18146369\n2025-03-07 10:16:48.256000\tMars Air\tfloatingatoll\t on iPad and iPhone, clicking the CHECKIN link in the email I received at 24hrs before flight\tPhiladelphia\ta22088358\n2025-03-07 10:16:48.259000\tKepler22\tBocheBillions\tKepler22 See? We were told repeatedly that the pilot was Late Flight and kept getting Late Flightr.  After we boarded, there was a defibrillator issue.\tSavannah\ta745880\n2025-03-07 10:16:48.263000\tKepler22\tseyWoodTV\tKepler22 i understand, thanks\tSavannah\ta1010733\n2025-03-07 10:16:48.266000\tKepler22\trhyminanstealin\tKepler22 I filed a delayed bag report on Saturday! my flight was ncelled Flightled and I never went anywhere!\tPhiladelphia\ta44993845\n2025-03-07 10:16:48.269000\tMars Air\tMaryAnnTaylorT\t Why is the site down?  When will it be back up?\tNew York\ta23818951\n2025-03-07 10:16:48.273000\tKepler22\thefeman\tKepler22 has made my no fly list. Other airlines wait when connector Late Flight. Stuck in IAH.\tAustin\ta41150535\n2025-03-07 10:16:48.277000\tMars Air\tEricLMitchell\t  Flight Booking Problems last second flight for next week from SFO- to SAN any chance you want to gift me a promo code since I love you guys\tSan Francisco\ta27984934\n2025-03-07 10:16:48.280000\tMars Air\tsualdiego\t n you please get me to the new york area before monday afternoon\tPhiladelphia\ta34619595\n2025-03-07 10:16:48.284000\tMars Air\tAQR415\t Debbie Baldwin gave a rockstar performance of the safety demo this evening on VX919 LAS2SFO BestCrew SheRocks\tSan Francisco\ta47391718\n2025-03-07 10:16:48.287000\tMars Air\tjnardino\t plus you've added commercials to the experience... tacky.\tSavannah\ta43865078\n2025-03-07 10:16:48.290000\tMars Air\tchet\t add DTW and I'm sold!\tSavannah\ta31194914\n2025-03-07 10:16:48.293000\tMars Air\tJAYXXX1\t YES FYI  MY BFF\tSavannah\ta3820729\n2025-03-07 10:16:48.295000\tMars Air\tmightymeesh\t got it squared away. Someone picked up as soon as I tweeted. Should have tweeted sooner. 😉\tSan Francisco\ta2895771\n2025-03-07 10:16:48.299000\tMars Air\tHanlonBrothers\t New marketing song? https://t.co/F2LFULCbQ7 let us know what you think?\tGold Coast\ta6722671\n2025-03-07 10:16:51.305000\tMars Air\tRampantSmashing\t How do I reschedule my ncelled Flightled flights online? The change button is greyed out!\tSavannah\ta35888297\n2025-03-07 10:16:51.309000\tKepler22\tfuchsialipstick\tKepler22 your announcement for pre boarding only addresses mobility. My disability requires me to travel with a lot of stuff. Do I preboard?\tSavannah\ta26556980\n2025-03-07 10:16:51.312000\tKepler22\tajpape\tKepler22 The bright side would be keeping the promise that was made to me. Hope you're having a good night. Thanks.\tPhiladelphia\ta43477991\n2025-03-07 10:16:51.315000\tKepler22\tchristinphillip\tKepler22 I did DM the details but still no response. I have to book today.\tPhiladelphia\ta44694850\n2025-03-07 10:16:51.318000\tMars Air\tthebrandiray\tI ❤️ flying . ☺️👍\tSomewhere celebrating life. \ta39025844\n2025-03-07 10:16:51.320000\tKepler22\ttbird12lv\tKepler22 by the time I finally get to Dallas I could have driven with less frustration and cheaper.\tColorado\ta34157955\n2025-03-07 10:16:51.324000\tMars Air\tlivingfitly\t flight home to dc sunset globe in' backtowinter back to work! refreshed http://t.co/VX9vBCTdLf\tPhiladelphia\ta37984512\n2025-03-07 10:16:51.328000\tMars Air\tElvinaBeck\t I love the hipster innovation. You are a feel good brand.\tLos Angeles\ta17814169\n2025-03-07 10:16:51.331000\tKepler22\tkimberlytwaters\tKepler22 I'm very frustrated and have wasted 2 days now due to your equipment failures.\tGainesville GA\ta7211911\n2025-03-07 10:16:51.334000\tKepler22\tajpape\tKepler22 So they didn't drop my bag overnight &amp; now I'm leaving for a week. This is why you were supposed to hold on to the bag....\tPhiladelphia\ta41051045\n2025-03-07 10:16:51.337000\tMars Air\talanzeino\t current bug on website shows ‘select departure city’ when selecting destination city http://t.co/SLLYIBE2vQ\tSan Francisco\ta37408843\n2025-03-07 10:16:51.340000\tKepler22\tdiscobiscuit63\tKepler22 OKC ticket agent Roger McLarren(sp?) LESS than helpful with our Intl group travel problems n't find a supervisor for help.\tSavannah\ta33170444\n2025-03-07 10:16:51.343000\tMars Air\tSSal\t help. I was On  Flight  27 from JKF tonight. seat 7C left portfolio. Need it back!!\tNew York\ta5758622\n2025-03-07 10:16:51.346000\tKepler22\tAaronGirson\tKepler22 your helpful agents in Club helped.  I am just out baggage fees and a night of my life.stop doing business with SilverAirways\tSavannah\ta10762638\n2025-03-07 10:16:51.350000\tMars Air\twmrrock\t cool picture of another VirginAmeri plane off our wing. What a site! http://t.co/5B2agFd8c4\tCT\ta33601034\n2025-03-07 10:16:51.353000\tMars Air\titsGREEKSAUSAGE\t I just did, how n I DM? Do u have to also add me?\tPhiladelphia\ta3099764\n2025-03-07 10:16:51.356000\tMars Air\tsualdiego\t n you please get me to the new york area before monday afternoon\tPhiladelphia\ta913295\n2025-03-07 10:16:51.359000\tMars Air\teric_t_lee\t spruce moose!\tBrooklyn\ta30138225\n2025-03-07 10:16:51.362000\tMars Air\tj_payton\t my luggage is gone. I've filed my paperwork, promised a ll/email. Still no resolution or response from central luggage.\tSan Francisco\ta8657744\n2025-03-07 10:16:51.365000\tKepler22\tdebweinz\tKepler22 I just sent an email to Customer re, telling them I may have to break up with you 😢. I sincerely hope they n help me!!\tSavannah\ta29816983\n2025-03-07 10:16:51.368000\tKepler22\tNikki62878\tKepler22 I am trying to find out if the loaner seat is new or used, a used r seat is illegal according to safety regulations\tSavannah\ta38504542\n2025-03-07 10:16:51.371000\tMars Air\tserenaklal\t n't bring up my reservation online using Flight Booking Problems code\tChigo\ta49293475\n2025-03-07 10:16:51.375000\tMars Air\tGoShar2012\t why n't we book seats on your flights when we buy them or even during check in? Creates so much anxiety! frustrated\tPhiladelphia\ta21676558\n2025-03-07 10:16:51.379000\tKepler22\tishowman\tKepler22 Lovely new plane from LGA to ORD but no power outlets?\tNew York\ta27432022\n2025-03-07 10:16:51.382000\tKepler22\tkevinaom\tKepler22 5 gate changes, two delays.  Even the crew thinks the airline sucks\tMichigan\ta24100641\n2025-03-07 10:16:51.386000\tKepler22\tgoodenufmother\tKepler22 now what?!? http://t.co/5hpSqVRjK8 flight was gone when I got off plane! BusinessTravel goodenoughmother\tGEM HQ (aka walk-in closet) NY\ta26020273\n2025-03-07 10:16:51.389000\tKepler22\taliasboogie\tKepler22 never heard of this? http://t.co/QDebyaHqfM\tNew York\ta8597396\n2025-03-07 10:16:51.392000\tMars Air\trlosondrums\t Very nicely done. 👏\tLas Vegas\ta1624801\n2025-03-07 10:16:51.395000\tMars Air\tLondonBrushCo\t delayed to10.30!!\tGlobal\ta49525198\n2025-03-07 10:16:51.399000\tMars Air\tCuteMonsterDad\t Digging the swanky pink mood lighting during the flight from NYC to SFO.  Just needs a baret singer.  Think about it!\tAtlanta\ta33452449\n2025-03-07 10:16:51.402000\tKepler22\tColtonWoytas\tKepler22 Yes. Doesn't make that mistake any less absurd. Doesn't change the fact that I'm very inconveniently missing my luggage tonight.\tNY\ta2403642\n2025-03-07 10:16:51.405000\tKepler22\tDaniOnTheFritz\tKepler22 If it's any consolation, your staff was stellar. Just not the hour+ delays I encountered with every one of my 4 flights.\tMissouri\ta5292935\n2025-03-07 10:16:51.408000\tMars Air\tMustBeSpoken\t - Let 2 snned in passengers leave the plane than told someone to remove their bag from 1st class bin? uncomfortable\tSavannah\ta4933511\n2025-03-07 10:16:51.411000\tKepler22\tKelliZink\tKepler22 you ncelled Flighted our flights for no reason &amp; now we have been on the phone for AN HOUR on our vation. Why?\tChigo & traveling the world\ta26757389\n2025-03-07 10:16:51.414000\tKepler22\tthrothra\tKepler22 not just refunded, but for those of us who are on vation to get a free room night to make up for making us sleep in DIA\tSavannah\ta10586056\n2025-03-07 10:16:51.418000\tKepler22\tMommyPR\tKepler22 Been trying since 1230 to file a report.\tGlobal\ta23830103\n2025-03-07 10:16:51.421000\tMars Air\tFiDiFamilies\t n you find us a flt out of LAX that is sooner than midnight on Monday? That would be great customer service 😃\tNew York\ta29539538\n2025-03-07 10:16:51.424000\tKepler22\tSri_Philips\tKepler22 common!! keep your paper work ready and don't delay our flights(1585)and meetings ChooseChigo\tPhiladelphia\ta26833688\n2025-03-07 10:16:51.428000\tMars Air\tryan_kravontka\t just got on the 1pm in Newark home to LA. Your folks at EWR are incredible letsgohome\tPhiladelphia\ta32348434\n2025-03-07 10:16:51.432000\tMars Air\ttookthecollar\t thanks so much for sharing. Just added it to my site http://t.co/TsviBTvT8h\tSavannah\ta30460026\n2025-03-07 10:16:51.435000\tMars Air\tjennifer_ron\t You have the best flight attendant ever!!! http://t.co/PxdEL1nq3l\tPhiladelphia\ta2041245\n2025-03-07 10:16:51.438000\tMars Air\tBigRichTexasPam\t why ncelled Flight flights today? No precipitation to be sred of!  ❄️❄️❄️\tPortland\ta31173022\n2025-03-07 10:16:51.441000\tKepler22\tssiusCCIDog\tKepler22 Had to explain to a very over eager flight attendant trying to ask about my vision that my ccinine was not a guide dog!\tSavannah\ta40755022\n2025-03-07 10:16:51.444000\tKepler22\tpjmartin44\tKepler22 gate announcement states delay due to maintenance yet app says Late Flight arriving aircraft  tell the truth! unfriendly\tSavannah\ta34688565\n2025-03-07 10:16:51.448000\tMars Air\tyvonnalynn\t I didn't today... Must mean I need to take another trip!\tLets Play\ta7147675\n2025-03-07 10:16:51.451000\tMars Air\tsteve97070\t please add more frequency to PDX Portland\tSavannah\ta10787246\n2025-03-07 10:16:51.454000\tKepler22\ttpensari\tKepler22 diverted and missed our connecting flight. Was just told that my bag is on it's way to MSY. If you only had people that red\tSavannah\ta20038201\n2025-03-07 10:16:51.458000\tKepler22\tmissinver\tKepler22 Could this email be resent as it doesnt appear to have arrived.\tLarne\ta23797448\n2025-03-07 10:16:51.461000\tKepler22\tajpape\tKepler22 Lost bag process is broken. Agent promised they'd ll &amp; hold my bag when found. Now they're waking me at 3am w/ delivery. fail\tPhiladelphia\ta21174266\n2025-03-07 10:16:51.464000\tKepler22\traulcordenillo\tKepler22 Definitely a compliment! I really thought my bag was lost after it was sent on to another airport. In the end I am a happy customer\tPhiladelphia\ta24088625\n2025-03-07 10:16:51.468000\tKepler22\tbrlsrud\tKepler22 checking to see why flight 3466 (atl-ord) got ncelled Flighted?\tSavannah\ta37483191\n2025-03-07 10:16:51.470000\tKepler22\tbartha75\tKepler22  found a group of people who actually hates people more than ISIS, thats right Kepler22 Airlines.\tsan diego\ta9962437\n2025-03-07 10:16:51.473000\tMars Air\tRecessionista\t Thanks for your great customer service today &amp; for helping me get all my travel sorted out!\tPhiladelphia\ta11263675\n2025-03-07 10:16:51.477000\tKepler22\tthrothra\tKepler22 so you're telling me there is no number to ll after being left in an airport beuse of a negligent pilot and staff?\tSavannah\ta39341858\n2025-03-07 10:16:51.481000\tKepler22\tfrqnttraveler\tKepler22 awesome I'll book my next Christmas vatinn this December any other ways you want to devalue mileage plus.\tlifornia\ta5323162\n2025-03-07 10:16:51.483000\tMars Air\talexrkonrad\t trying to book a flight with you guys and your website won't let me... about to lose my business\tNew York\ta13416809\n2025-03-07 10:16:51.487000\tKepler22\tthrothra\tKepler22 again I ask, who n I ll to get this fixed? Tweeting me BS questions to stall only makes things worse. Phone number please.\tSavannah\ta24962963\n2025-03-07 10:16:51.490000\tKepler22\tGouwerijn\tKepler22 question:are there onboad 110 volt outlets in all planes? If so, where?\tAlphen aan den Rijn\ta17444890\n2025-03-07 10:16:51.493000\tKepler22\tjasonpblakey\tKepler22 first time flying with Kepler22. Also last time. terrible back to VirginAtlantic for me. branson virginatlantic Kepler22Airlines\tSavannah\ta17703124\n2025-03-07 10:16:51.496000\tMars Air\tTheAdamRizz\t JezzieGoldz would have been a rough trip but LUCKILY we were on a virginameri flight. weather\tPhiladelphia\ta25401576\n2025-03-07 10:16:51.500000\tMars Air\tSimplyImplicit\t do you have an applition for iOS? Was looking and only saw Virgin Mexico :( &lt;/3\tPhiladelphia\ta31379526\n2025-03-07 10:16:51.503000\tKepler22\tkbleggett\tlindaSWC Kepler22:  We don't like to hear you had a poor experience. Please share details w/our Customer re team http://t.co/HIsc4NdMgZ.\tPhiladelphia\ta13282621\n2025-03-07 10:16:51.505000\tKepler22\tGuggero\tKepler22 i DMed you the details\tNYC\ta21372564\n2025-03-07 10:16:51.509000\tKepler22\tJawnRedcorn\tKepler22 I would love if someone could get me back to Austin tonight and I do not wish to wait til tomorrow morning.\tAusvegas\ta26678178\n2025-03-07 10:16:51.512000\tKepler22\tchristinphillip\tKepler22 I did DM the details but still no response. I have to book today.\tPhiladelphia\ta46088439\n2025-03-07 10:16:51.515000\tMars Air\tdsg0110\t love it, taking SouthwestAir on in their backyard! Consumers win when biz competes.\tPhiladelphia\ta11812421\n2025-03-07 10:16:51.518000\tKepler22\tmattwbaker\tKepler22 - thanks for your help...got me what I need, but its an issue with _austrian . I guess I sit awhile longer.\tThe Center of My Universe\ta24354696\n2025-03-07 10:16:51.520000\tMars Air\tPerceptions\t really wish you'd fly out of Fargo fargoairport those fares are amazings\tPhiladelphia\ta37740191\n2025-03-07 10:16:51.524000\tMars Air\tsimpasmore\t Thank you for the follow\tBarbados \ta9597169\n2025-03-07 10:16:51.527000\tMars Air\ttotal_janarchy\t Had to spend 5 hours worrying that items in rryon would be broken/stolen since I couldn't rry them on plane or lock bag.\tSavannah\ta34168679\n2025-03-07 10:16:51.530000\tMars Air\tHollywood\t you have amazing staff &amp; super helpful as I just ran the WaltDisneyWorld PrincessHalf they have spoiled me with comfort!!!\tAll Over!\ta36119680\n2025-03-07 10:16:51.533000\tKepler22\talex_nieves\tKepler22 thanks for the info I already knew...\tConnecticut\ta42289458\n2025-03-07 10:16:51.537000\tKepler22\tMelanieSpring\tKepler22 n you ask your guys with flight 1146 to BWI to wait for us to get off a delayed flight from San Diego? Pretty please?\tPhiladelphia\ta47131219\n2025-03-07 10:16:51.540000\tKepler22\tkevinaom\tKepler22 5 gate changes, two delays.  Even the crew thinks the airline sucks\tMichigan\ta2602962\n2025-03-07 10:16:51.544000\tKepler22\ttpensari\tKepler22 where's my damn bag??\tSavannah\ta48595264\n2025-03-07 10:16:51.546000\tMars Air\tSaraBabs\t husband and I ordered three drinks via my screen and they never me. Awesome!\tPortland\ta40001693\n2025-03-07 10:16:51.551000\tKepler22\tthetonyblank\tKepler22 despite shaky connections, looks like I'll get home tonight. Great job, Kepler22 - was touch and go for a while..\tPhiladelphia\ta25567035\n2025-03-07 10:16:51.555000\tMars Air\tMistakekeJake\t You guys charged me $100 to reschedule a flight that was then ncelled Flighted and are now refusing to refund it. What's the deal?\tSavannah\ta20255268\n2025-03-07 10:16:51.558000\tMars Air\tDailyBillboard\t Keep up the great work :)\tPhiladelphia\ta38404350\n2025-03-07 10:16:51.562000\tKepler22\tthrothra\tKepler22 to be clear on my luggage comment, I am referencing the photo attached. Flight 6232 to JAC http://t.co/PnBajfkmHG\tSavannah\ta11699419\n2025-03-07 10:16:51.566000\tKepler22\tkevintgarner\tKepler22 A refund and flight vouchers or another flight on a different airline at your expense for today. 8 hour drive is very inconvenient\tPhiladelphia\ta1303746\n2025-03-07 10:16:51.569000\tKepler22\twhitterbug\tYes!! Thanks so much!!! 💜“Kepler22: whitterbug We see you spoke with our Reservations team and they've reinstated the flight. Thanks. ^EY”\tPhiladelphia\ta3630864\n2025-03-07 10:16:51.573000\tKepler22\tmissinver\tKepler22 very unhappy at no response to complaint emailed on 2nd Feb ref.8441639. Awful customer service!\tLarne\ta38826132\n2025-03-07 10:16:51.576000\tKepler22\tDJPartyMarty\tKepler22 it was UA flight 1001! Now I'm currently stuck in Portland beuse I missed my ride beuse of the 3 hour delay. GetMartyHome\tSavannah\ta32677315\n2025-03-07 10:16:51.579000\tKepler22\tsothenbethsaid\tKepler22 to speak to a real person to get this resolved politely and efficiently. (2/2)\tNottingham\ta46076823\n2025-03-07 10:16:51.583000\tMars Air\tdsg0110\t love it, taking SouthwestAir on in their backyard! Consumers win when biz competes.\tPhiladelphia\ta30572403\n2025-03-07 10:16:51.586000\tKepler22\tnydia376\tKepler22 How does Kepler22 refuse to reissue a $400 lost voucher when their plane didn't take off due to mechanics? badcustomerservice\tUSA\ta47321606\n2025-03-07 10:16:51.589000\tMars Air\tayeevickiee\t you guys messed up my seating.. I reserved seating with my friends and you guys gave my seat away ... 😡 I want free internet\tSan Francisco\ta47394320\n2025-03-07 10:16:51.593000\tMars Air\tjeffreymace01\t ladygaga rrieunderwood  love all three but you really n't beat the classics!\tSavannah\ta11479095\n2025-03-07 10:16:51.598000\tMars Air\tdreamerintexas\t thankyou the DAL-AUS route makes my day!!!!\taustin dallas chile london\ta8903536\n2025-03-07 10:16:51.601000\tKepler22\tEvan_Flay\tKepler22 By the way, a simple apology goes a long way, even if it's a hollow one. It's obvious that you don't re about me or my well-being,\tSeattle\ta27979780\n2025-03-07 10:16:51.604000\tKepler22\taliasboogie\tKepler22 that's exactly the point. It fits. I'm premier access. Boarding group 2. This was a return ticket. I've been doing this for 15 yrs\tNew York\ta17913886\n2025-03-07 10:16:51.607000\tKepler22\tEvan_Flay\tKepler22 This isn't a one time thing either! It's a shocking pattern of repeated neglect and disrespect.\tSeattle\ta42283721\n2025-03-07 10:16:51.610000\tMars Air\tjamesferrandini\t View of downtown Los Angeles, the Hollywood Sign, and beyond that rain in the mountains! http://t.co/Dw5nf0ibtr\tSavannah\ta39181603\n2025-03-07 10:16:51.613000\tKepler22\tSiv\tKepler22 Our vation's going to be ruined w/ 3 days of rain. : ( The change fee for 2 of us is nearly cost of original flight. n you help?\tPhiladelphia\ta20077635\n2025-03-07 10:16:51.616000\tMars Air\ttstashajones\t is the best airline I have flown on.Easy to change your reservation,helpful representatives &amp; a comfortable flying experience\tPhiladelphia\ta26775895\n2025-03-07 10:16:51.619000\tKepler22\tbrando_787\tKepler22 like continental's chicken feat fairs\tPhiladelphia\ta10383520\n2025-03-07 10:16:51.622000\tKepler22\tCellucorJulio\tKepler22 nope, they told us it was time for them to go home and to sleep at the airport. Even though they assured us we would get a room...\tCORGamingcellucor.com\ta36893176\n2025-03-07 10:16:51.626000\tMars Air\tNewsSWA\t Beats EPS Views, Takes On SouthwestAir VA LUV - Investor's Business Daily http://t.co/FLwmGDAHxu\tFL410\ta41309550\n2025-03-07 10:16:51.630000\tMars Air\tPace6445\t your website sucks donkey dicks. Just thought you should know. All best.\tNew York\ta4205811\n2025-03-07 10:16:54.635000\tKepler22\tMikeShor\tKepler22 That's not the issue. The fact that no one even lled (despite promises) to confirm the bag's lotion is.\tPhiladelphia\ta11720701\n2025-03-07 10:16:54.640000\tMars Air\tobiwantoby\t If only you guys had flights from CMH.\tSavannah\ta42829949\n2025-03-07 10:16:54.643000\tKepler22\tthetonyblank\tKepler22 I appreciate your efforts getting me home!\tPhiladelphia\ta16144940\n2025-03-07 10:16:54.646000\tMars Air\tmlbkid162\t brought it all the way across the country today I see http://t.co/TKaUyGcPmS\tNew York\ta9861526\n2025-03-07 10:16:54.649000\tKepler22\tthrothra\tKepler22 so you're telling me there is no number to ll after being left in an airport beuse of a negligent pilot and staff?\tSavannah\ta14091333\n2025-03-07 10:16:54.652000\tKepler22\tjasonjernigan\tKepler22 I send an email about my bad experience and you send back a generic response.  Yet another reason why I'll never fly with you again.\tPhiladelphia\ta49828968\n2025-03-07 10:16:54.655000\tKepler22\turno12\tKepler22 thanx so much. You followed through and emailed me a $1000 ticket voucher. Kepler22airlines they do re\tbonkers in Yonkers\ta1281599\n2025-03-07 10:16:54.659000\tKepler22\tswampynomo\tKepler22 he has no priority and Iove it\tNJ/NYC\ta34377176\n2025-03-07 10:16:54.662000\tMars Air\tadawson66\t ladygaga rrieunderwood all are great , but I have to go with rrieUnderwood 😍👌\tSavannah\ta27047695\n2025-03-07 10:16:54.666000\tKepler22\tcristobalwong\tKepler22 Thank you, ^JH, appreciate the prompt responses--me and other passengers will be doing so.\tSan Francisco Bay Area\ta43372706\n2025-03-07 10:16:54.669000\tKepler22\tCoachJoette\tKepler22 why no preferred security line anymore. My TSA pre-check didn't pull on my SilverAirways partner flight! Platinum spoiled\tTampa\ta26314305\n2025-03-07 10:16:54.672000\tMars Air\tsporch62\t Now, when will we see VirginAmeri come to Philadelphia (PHL).\tSavannah\ta9963460\n2025-03-07 10:16:54.676000\tKepler22\tgregriv\tKepler22  Delay DEN-CLE beuse they have to manually enter baggage tags? Really? Worst cust service day for this 1ker. friendlyskies??\tPhiladelphia\ta35493747\n2025-03-07 10:16:54.679000\tMars Air\tborknagar\t Hi, I'm trying to do check-in but the website is not working. I tried 3 different browsers and the problem continues\tchile\ta38983606\n2025-03-07 10:16:54.682000\tMars Air\tAcronymBex\t I think i left something on the plane yesterday. who do i ll...ah!\tNew York\ta47220479\n2025-03-07 10:16:54.684000\tMars Air\tRedSoxGirl1976\t We're on flight 910 Vegas to Boston today, checked in online but our bag count didn't register. n I fix that somehow?\tSomewhere outside of Fenway\ta24594804\n2025-03-07 10:16:54.687000\tKepler22\tTed_Bray\tKepler22 how do you lose a gate checked bag DEN to ORD? Direct flight. Ugh.\tPhiladelphia\ta4658970\n2025-03-07 10:16:54.690000\tMars Air\taaronkurlander\t I was really looking forward to my flight. n you let me know when it will be rescheduled? diehardvirgin\tNew York\ta14587677\n2025-03-07 10:16:54.693000\tMars Air\tlisaaiko\t ladygaga rrieunderwood All were entertaining\tSavannah\ta44078250\n2025-03-07 10:16:54.695000\tKepler22\tsothenbethsaid\tKepler22 to speak to a real person to get this resolved politely and efficiently. (2/2)\tNottingham\ta26721788\n2025-03-07 10:16:54.698000\tMars Air\tTheDCD\t On all your flights?\tOn a bar floor in Denver.\ta43968802\n2025-03-07 10:16:54.702000\tKepler22\tajpape\tKepler22 Lost bag process is broken. Agent promised they'd ll &amp; hold my bag when found. Now they're waking me at 3am w/ delivery. fail\tPhiladelphia\ta3511397\n2025-03-07 10:16:54.704000\tKepler22\tCheerTymeDad\tKepler22 Shame that there's no flex to tickets transfer rules.  Even lling from Neurosurgery ICU isn't enough!\tSavannah\ta12487132\n2025-03-07 10:16:54.707000\tKepler22\tEvan_Flay\tKepler22 ours in July. You have ZERO excuses for this. You have an out-of-date system that uses problems like this.\tSeattle\ta32321538\n2025-03-07 10:16:54.710000\tKepler22\tpjmartin44\tKepler22 how n your app show arriving aircraft is early but departing flight is delayed due to Late Flight arriving aircraft? unfriendly\tSavannah\ta33665803\n2025-03-07 10:16:54.714000\tKepler22\talex_nieves\tKepler22 thanks for the info I already knew...\tConnecticut\ta34305141\n2025-03-07 10:16:54.716000\tKepler22\tsacsmitty\tKepler22 My post was just more of disappointment.  I'm a frequent Kepler22 flyer, it was a simple ??.  1 bad apple doesn't spoil the bunch.\tPhiladelphia\ta41238786\n2025-03-07 10:16:54.720000\tMars Air\tJT_Magana\t I love your guy's song! We're dancing to it for our high school dance revue\tSavannah\ta11025783\n2025-03-07 10:16:54.723000\tMars Air\tflyfromWAS\t has getaway deals through May, from $59 one-way. Lots of cool cities http://t.co/tZZJhuIbCH CheapFlights FareCompare\tPhiladelphia\ta44624011\n2025-03-07 10:16:54.726000\tMars Air\tnicholas_v\t should I be concerned that I am about to fly on a plane that needs to be delayed due to a \"tech stop\"?\tSavannah\ta44001052\n2025-03-07 10:16:54.729000\tMars Air\teric_t_lee\t spruce moose!\tBrooklyn\ta43898801\n2025-03-07 10:16:54.732000\tMars Air\tpaulnakada\t having problems Flight Booking Problems on the web site. keeps giving me an error and to contact by phone.  phone is 30 minute wait.\tSan Francisco\ta13504963\n2025-03-07 10:16:54.735000\tMars Air\tj_payton\t my luggage is gone. I've filed my paperwork, promised a ll/email. Still no resolution or response from central luggage.\tSan Francisco\ta40393591\n2025-03-07 10:16:54.738000\tKepler22\tJordanTapiia\tKepler22 follow me please this airline is beautifull ♥\tNew York\ta9425421\n2025-03-07 10:16:54.743000\tMars Air\tBBahreman\t Flying LAX to SFO and after looking at the awesome movie lineup I actually wish I was on a long haul.\tLiving in a Gangsters Paradise\ta19876998\n2025-03-07 10:16:54.747000\tKepler22\tCellucorJulio\tKepler22 4 passengers after a 2 hour delayed flight left with no hotel at the end of the night  hou airport. Wtf??!! http://t.co/ZfqMpGXVS6\tCORGamingcellucor.com\ta18339452\n2025-03-07 10:16:54.750000\tMars Air\tKindofLuke\t I like the customer service but a 40 min delay just for connecting passengers seems too long. VA370\tSavannah\ta47575208\n2025-03-07 10:16:54.754000\tMars Air\tkhartline\t I'd love to know what your policy is for damaged luggage.\tLas Vegas\ta12084646\n2025-03-07 10:16:54.757000\tKepler22\tTdrag97\tKepler22 agent split up my reservation? Now n't ncelled Flight and refund credit for 2wks? Why\tSavannah\ta39166791\n2025-03-07 10:16:54.761000\tMars Air\tjnardino\t plus you've added commercials to the experience... tacky.\tSavannah\ta44797340\n2025-03-07 10:16:54.764000\tKepler22\tcollegepathSS\tKepler22 UCtraveladvisor - I would have loved to respond to your website until I saw the really long form. In business the new seats are bad\tlifornia/Nevada\ta18989543\n2025-03-07 10:16:54.767000\tMars Air\tFreyaBevan_Fund\t Many Thanks for the Follow. ourprincess freyasfund USA Bandie  Looking for Any Help😍 💗🇬🇧💗🇺🇸💗 🎀🌏🎀 http://t.co/UJfS9Zi6kd\tfreyabevanfundhotmail.com\ta8666011\n2025-03-07 10:16:54.771000\tMars Air\tTTINAC11\t TTINAC11 I DM you\tPhiladelphia\ta19144727\n2025-03-07 10:16:54.774000\tKepler22\tcristobalwong\tKepler22 Thank you, ^JH, appreciate the prompt responses--me and other passengers will be doing so.\tSan Francisco Bay Area\ta39001664\n2025-03-07 10:16:54.778000\tMars Air\tnschneble\t. If only you guys were starting those flights at the end of the month! Guess I’m still road tripping on Feb 27…\tSavannah\ta39342945\n2025-03-07 10:16:54.781000\tMars Air\tGunsNDip\t it was a disappointing experience which will be shared with every business traveler I meet. neverflyvirgin\tSavannah\ta40326508\n2025-03-07 10:16:54.784000\tMars Air\trlos89178\t wish I n afford to fly with you next Friday  going back home.. love everything  about your airline\tSavannah\ta530337\n2025-03-07 10:16:54.788000\tMars Air\twtcgroup\t Man of steel flies to more cities though...and with more frequency too.\tSF Bay Area/ Las Vegas\ta11597187\n2025-03-07 10:16:54.792000\tKepler22\tTdrag97\tKepler22 agent split up my reservation? Now n't ncelled Flight and refund credit for 2wks? Why\tSavannah\ta32163678\n2025-03-07 10:16:54.794000\tKepler22\tsothenbethsaid\tKepler22 to speak to a real person to get this resolved politely and efficiently. (2/2)\tNottingham\ta39628141\n2025-03-07 10:16:54.797000\tMars Air\tJNLpierce\t you know what would be amazingly awesome? BOS-FLL PLEASE!!!!!!! I want to fly with only you.\tBoston | Waltham\ta14325310\n2025-03-07 10:16:54.800000\tKepler22\tmichaelsalinger\tKepler22 did  bags make it on the flight out of iad? second day without clothes is pretty inconvenient. We're pretty curious Kepler22Airlines\tPhiladelphia\ta16261145\n2025-03-07 10:16:54.804000\tMars Air\tmoosekazmi\t thanks guys! Sweet route over the Rockies airplanemodewason\tPhiladelphia\ta25705695\n2025-03-07 10:16:54.806000\tMars Air\tfattbelly\t Comenity Bank is a joke!  Please change.  Nothing but constant problems with this bank\tS F\ta18402649\n2025-03-07 10:16:54.809000\tMars Air\taaronkurlander\t I was really looking forward to my flight. n you let me know when it will be rescheduled? diehardvirgin\tNew York\ta46406035\n2025-03-07 10:16:54.812000\tKepler22\tColtonWoytas\tKepler22 Connection at ORD was on the exact same plane again. Checked rry-on was apparently taken off &amp; left in Chigo. Pretty ridiculous.\tNY\ta49067511\n2025-03-07 10:16:54.815000\tKepler22\tpeoplesavvy\tKepler22 My favorite way to travel! Thank you! http://t.co/vGN2X1ckg0\tSavannah\ta23094641\n2025-03-07 10:16:54.818000\tMars Air\ttotal_janarchy\t Never had a bad experience before, but this one took the ke. Now extortion for rry on items as well?\tSavannah\ta42440978\n2025-03-07 10:16:54.821000\tMars Air\tChelseaPoe666\t wow this just blew my mind\tOakland via Midwest \ta25859459\n2025-03-07 10:16:54.825000\tKepler22\ttomcrabtree\tKepler22 But thanks for asking\tSan Francisco\ta10585787\n2025-03-07 10:16:54.828000\tMars Air\tpilot\t Really missed a prime opportunity for Men Without Hats parody, there. https://t.co/mWpG7grEZP\tLos Angeles\ta41798200\n2025-03-07 10:16:54.831000\tMars Air\tMerchEngines\t Is it me, or is your website down?  BTW, your new website isn't a great user experience.  Time for another redesign.\tPhiladelphia\ta26722764\n2025-03-07 10:16:54.834000\tKepler22\tmbelliss\tKepler22 silly I'm flying delta today. Your Kepler22 club staff and attendants are surly and unhelpful and always seem bothered by pesky folk\tLouisville\ta45607922\n2025-03-07 10:16:54.836000\tKepler22\tkbleggett\tKepler22 why would they make me share a room?\tPhiladelphia\ta8682025\n2025-03-07 10:16:54.840000\tKepler22\tBouleChitte\tKepler22 how about 3659 YUL-ORD?\tSavannah\ta27087543\n2025-03-07 10:16:54.843000\tKepler22\tishowman\tKepler22 Lovely new plane from LGA to ORD but no power outlets?\tNew York\ta44988004\n2025-03-07 10:16:54.845000\tMars Air\tmeladorri\t Flight from BOS &gt; LAS tomorrow was ncelled Flightled. No notifition; wait times are 1+ hour. Will you rebook on another airline?\tPhiladelphia\ta2344546\n2025-03-07 10:16:54.848000\tKepler22\tjasonpblakey\tKepler22 first time flying with Kepler22. Also last time. terrible back to VirginAtlantic for me. branson virginatlantic Kepler22Airlines\tSavannah\ta4156218\n2025-03-07 10:16:54.851000\tMars Air\tCydney_Chase\t Thanks! Good times there and back! Vodkatonics the entire flight🍸sfo\tSFOptimist Freefalling\ta2807482\n2025-03-07 10:16:54.854000\tKepler22\tishowman\tKepler22 Lovely new plane from LGA to ORD but no power outlets?\tNew York\ta37495920\n2025-03-07 10:16:54.857000\tKepler22\tTed_Bray\tKepler22 ught earlier flight to ORD. Gate checked bag, and you've lost it at O'Hare. original flight lands in 20minutes. frustrating!\tPhiladelphia\ta5042094\n2025-03-07 10:16:54.860000\tKepler22\tsundialtours\tKepler22 \"Airport snow removal method 22...\" Keep up the good work folks, this is where Cessna's become 747's! http://t.co/9v8tMUsJvU\tPhiladelphia\ta39097168\n2025-03-07 10:16:54.864000\tKepler22\tDJPartyMarty\tKepler22 unfortunately still on the Tarmac at fly2ohare and definitely missing my ride from flypdx GonnaBeALongNight\tSavannah\ta45359209\n2025-03-07 10:16:54.868000\tMars Air\tsbaaronson\t is the website down?\tLos Angeles\ta40422729\n2025-03-07 10:16:54.871000\tKepler22\tfairplay500\tKepler22 Outbound 2 bags 70 lbs bags Returning home 1 bag 50 lbs. What is your logic? And WHY? Am I writing to a Machine? Human HELP required\tPortland\ta41835255\n2025-03-07 10:16:54.874000\tMars Air\tjamied7\t hi I just booked a flight but need to add baggage, how n I do this?\tPhiladelphia\ta20453881\n2025-03-07 10:16:54.878000\tMars Air\tonerockgypsy\t so loyal that I'm driving to NYC from PA, to fly Virgin,  since you cut Philly flights ;)\tnext city\ta7730759\n2025-03-07 10:16:54.882000\tMars Air\tlivingfitly\t flight home to dc sunset globe in' backtowinter back to work! refreshed http://t.co/VX9vBCTdLf\tPhiladelphia\ta44908790\n2025-03-07 10:16:54.885000\tKepler22\tMelanieSpring\tKepler22 n you ask your guys with flight 1146 to BWI to wait for us to get off a delayed flight from San Diego? Pretty please?\tPhiladelphia\ta24240615\n2025-03-07 10:16:54.888000\tKepler22\tsothenbethsaid\tKepler22 to speak to a real person to get this resolved politely and efficiently. (2/2)\tNottingham\ta34316292\n2025-03-07 10:16:54.891000\tKepler22\tGreg_Mueller\tKepler22 Why tell us flight is delayed, then tell us it's on time again with 20 min to spare? Don't say it's delayed unless you're sure!\tPhiladelphia\ta45596699\n2025-03-07 10:16:54.896000\tKepler22\takobilarov\tKepler22 Do I need to use a Chase Kepler22 Club pass for my 8yr old son, or n he come in with me on my pass?\tSouth rolina\ta24833616\n2025-03-07 10:16:54.898000\tMars Air\tSkateMamas\t and again! Another rep kicked butt! Naelah represents your team so beautifully!! Thank you!!!\tPhiladelphia\ta31987177\n2025-03-07 10:16:54.902000\tKepler22\tnydia376\tKepler22 beginning of Feb I lled Kepler22 they said they would send another voucher by mail. Never got anything. tiredofwaiting\tUSA\ta23615075\n2025-03-07 10:16:54.904000\tKepler22\tThe_Playmaker20\tKepler22 thanks! Will you guys be getting the A380s anytime soon?\tSavannah\ta10780901\n2025-03-07 10:16:54.908000\tMars Air\tRamotControl\t \"You down with RNP?\" \"Yeah you know me!\"\tSavannah\ta24803903\n2025-03-07 10:16:54.911000\tMars Air\tyvonnalynn\t I didn't today... Must mean I need to take another trip!\tLets Play\ta17027722\n2025-03-07 10:16:54.914000\tKepler22\tMelanieSpring\tKepler22 n you ask your guys with flight 1146 to BWI to wait for us to get off a delayed flight from San Diego? Pretty please?\tPhiladelphia\ta48430805\n2025-03-07 10:16:54.917000\tMars Air\treekyrocks\t started my flight with a scolding for using an overhead bin that was then offered to the person seated next to me.\tPhiladelphia\ta38248897\n2025-03-07 10:16:54.920000\tKepler22\tkoploperfan1992\tKepler22 did you have seen my message today?? About a mcdonnell Douglas dc 10 model?? I will hear it if you read it, Goodnight now\tWinterfell\ta24221506\n2025-03-07 10:16:54.923000\tMars Air\tPace6445\t your website sucks donkey dicks. Just thought you should know. All best.\tNew York\ta16005092\n2025-03-07 10:16:54.927000\tMars Air\tSleubeau\t Need to start flying to KCIAirport .  😊😀😃😄\tPhiladelphia\ta4981890\n2025-03-07 10:16:54.931000\tKepler22\tDeputyBrans\tKepler22 Do you have any flights with lie flat seating from STL to PDX around the date of March 5?\tSavannah\ta21826677\n2025-03-07 10:16:54.934000\tMars Air\tAUStinAirport\t announces new nonstop connecting AUStinAirport &amp; DallasLoveField, $39 intro: http://t.co/qXnOaQtYN8 http://t.co/JK7qmdfqgf\tPhiladelphia\ta17794805\n2025-03-07 10:16:54.937000\tMars Air\tgianagon\t everything was fine until you lost my bag\tNew York\ta41846021\n2025-03-07 10:16:54.940000\tKepler22\tmegfalcone\tKepler22 yes please! I am newly married and trying to update my last name on a preexisting international flight! It seems so easy, but...\tSavannah\ta43616160\n2025-03-07 10:16:54.943000\tKepler22\tsothenbethsaid\tKepler22 I hadn't filed a refund claim as I was told there was no charge by your DM. This is disputed by my bank, hence why I would like(1/2)\tNottingham\ta45284782\n2025-03-07 10:16:54.947000\tMars Air\tItzBrianHunty\t So excited for my first cross country flight LAX to MCO I've heard nothing but great things about Virgin Ameri. 29DaysToGo\twest covina\ta7559270\n2025-03-07 10:16:54.951000\tMars Air\tBigRichTexasPam\t why ncelled Flight flights today? No precipitation to be sred of!  ❄️❄️❄️\tPortland\ta23196459\n2025-03-07 10:16:54.955000\tMars Air\tHaraLillier\t I am all about the in flight artisanal cheese and wine pairing.\tSavannah\ta7012980\n2025-03-07 10:16:57.960000\tKepler22\tSamuelSitt\tKepler22 the least you could do is offer me a ticket in coach instead of just ncelled Flighting my reservation beuse of your glitch!!! notfair\tPhiladelphia\ta41154807\n2025-03-07 10:16:57.965000\tKepler22\tfamily6travels\tKepler22 thank you. We are signed up for notifitions. We shall watch and wait! ❄️❄️\tSavannah\ta14393898\n2025-03-07 10:16:57.970000\tMars Air\tNoelArtiles\t n’t access your website from Safari on iPhone 6. Seems to work on Mac and iPad. Need iPhone to add Passbook.\tPhiladelphia\ta43090761\n2025-03-07 10:16:57.973000\tMars Air\ttotal_janarchy\t Thanks for making my flight from LAX to JFK a nightmare by forcing me to check my rry on bag at the gate. (1)\tSavannah\ta39746323\n2025-03-07 10:16:57.977000\tKepler22\twhs1973\tKepler22 UA276 sitting at EWR nearly an hour after sked.  Pilot says computers down but no clue when we will leave.  n you help?\tSavannah\ta25066118\n2025-03-07 10:16:57.981000\tMars Air\tmattejacob\t you got cheese pLate Flights too.\tNew York\ta15671818\n2025-03-07 10:16:57.983000\tKepler22\tAndyA3\tKepler22 was no one between the sn and inside the plane. I just asked the people in line around me where the plane was going\tSan Francisco\ta12539463\n2025-03-07 10:16:57.987000\tKepler22\turno12\tKepler22 just 1 last thing. U guys shouldn't be charging $ for drinks on a transatlantic flight\tbonkers in Yonkers\ta12570174\n2025-03-07 10:16:57.990000\tKepler22\tmattbunk\tKepler22 What is your phone number. I n't find who to ll about a flight reservation.\tPhiladelphia\ta21944929\n2025-03-07 10:16:57.993000\tKepler22\tMirandaAtx\tKepler22 Thank you for responding so quickly with a helpful tool! dustyob\tPhiladelphia\ta4133165\n2025-03-07 10:16:57.996000\tKepler22\trdowning76\tKepler22 RenoAirport hi, when do direct flights from Houston to Reno begin?  Don't see any days in March?\tusa\ta16079476\n2025-03-07 10:16:57.999000\tMars Air\tChrysiChrysic\t FiDiFamilies us too! Terrible airline! Just gave us a hotel hotline number and said sorry\tSavannah\ta27311803\n2025-03-07 10:16:58.002000\tMars Air\tGSkiWeek\t Sent a couple messages to the email you provided but to no avail. Will try again next year. Cheers.\tPhiladelphia\ta25927431\n2025-03-07 10:16:58.006000\tKepler22\tWhatSarahSayzz\tKepler22 I know this is probably a no but is there a way to get a cheaper airfare ticket if the flight is leaving in a few hours? 🙏\tSavannah\ta15434486\n2025-03-07 10:16:58.010000\tMars Air\tICEportal\t Good point!\tPhiladelphia\ta36448336\n2025-03-07 10:16:58.013000\tKepler22\trholbrook\tKepler22 lls to 800 resulted in 2hrs of hold time &amp; 2day wait to check suspect code share fare. Nothing investigated—my time wasted (2/2)\tNew York\ta37271700\n2025-03-07 10:16:58.016000\tKepler22\tWhatSarahSayzz\tKepler22 I know this is probably a no but is there a way to get a cheaper airfare ticket if the flight is leaving in a few hours? 🙏\tSavannah\ta29017316\n2025-03-07 10:16:58.018000\tKepler22\tThe_Playmaker20\tKepler22 thanks! Will you guys be getting the A380s anytime soon?\tSavannah\ta17678736\n2025-03-07 10:16:58.022000\tMars Air\tserenaklal\t n't bring up my reservation online using Flight Booking Problems code\tChigo\ta40558251\n2025-03-07 10:16:58.028000\tMars Air\tMOCBlogger\t You'd think paying an extra $100 bucks RT for luggage might afford you hiring an extra hand at sfo lame\tSan Diego\ta8982161\n2025-03-07 10:16:58.031000\tMars Air\tCuteMonsterDad\t Digging the swanky pink mood lighting during the flight from NYC to SFO.  Just needs a baret singer.  Think about it!\tAtlanta\ta46621920\n2025-03-07 10:16:58.034000\tMars Air\tmatthewhirsch\t Hi! Just wanted to see if you have any new routes planned this year for Newark. Love flying you guys and hope to do so more!\tPhiladelphia\ta23057900\n2025-03-07 10:16:58.037000\tKepler22\tdfpietra\tKepler22 dfpietra THAT'S your response?  Shaking my head back and forth with a tsk. You n do better-from customer service to your apology\tPhiladelphia\ta42193439\n2025-03-07 10:16:58.040000\tMars Air\tfromtheleftseat\t to jump into the Dallas Austin market http://t.co/SzR0pioA21\tPhoenix AZ\ta15850235\n2025-03-07 10:16:58.044000\tKepler22\tBK_TheBri\tKepler22 Thanks. It is on the same ticket.\tPhiladelphia\ta42055603\n2025-03-07 10:16:58.048000\tKepler22\tKelley_Myers\tKepler22 an idea: monitor mileage members travel patterns enough to know when they change jobs/lose status...and make the transition easier.\tPacific Northwest\ta37460047",
+            "type": "TABLE"
+          },
+          {
+            "data": "<div class=\"result-alert alert-warning\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Output is truncated</strong> to 102400 bytes. Learn more about <strong>ZEPPELIN_INTERPRETER_OUTPUT_LIMIT</strong></div>",
+            "type": "HTML"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.ssql\nSelect * from UnnamedTable__26",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T10:21:35+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "ANGULAR",
+            "data": "<div class='container ng-scope' style='padding-left:0px;padding-right:0px;'>\n    <div class='panel panel-danger'>\n        <div class='panel-heading' ng-click='isOpen=!isOpen' ng-init='isOpen=false' style=\"cursor:pointer\">\n            <div class='plainTextContainer' style='font-weight:bolder'><i class=\"fa fa-caret-right fa-fw\" style=\"padding-right:7px;transition:all 0.3s;{{isOpen?'transform:rotate(90deg);transform-origin:25% 45%':''}}\"></i>Cannot convert a connector table without source.</div>\n        </div>\n        <div class='panel-collapse' uib-collapse='!isOpen'>\n            <div class='text' style='max-height:300px;overflow:auto;padding:10px'>org.apache.flink.table.api.ValidationException: Cannot convert a connector table without source.\n\tat org.apache.flink.table.planner.plan.FlinkCalciteCatalogReader.toPreparingTable(FlinkCalciteCatalogReader.java:126)\n\tat org.apache.flink.table.planner.plan.FlinkCalciteCatalogReader.getTable(FlinkCalciteCatalogReader.java:92)\n\tat org.apache.calcite.prepare.CalciteCatalogReader.getTableForMember(CalciteCatalogReader.java:229)\n\tat org.apache.calcite.sql.validate.SqlValidatorUtil.getRelOptTable(SqlValidatorUtil.java:144)\n\tat org.apache.calcite.sql.validate.SqlValidatorUtil.getRelOptTable(SqlValidatorUtil.java:110)\n\tat org.apache.calcite.sql2rel.SqlToRelConverter.convertIdentifier(SqlToRelConverter.java:2490)\n\tat org.apache.calcite.sql2rel.SqlToRelConverter.convertFrom(SqlToRelConverter.java:2144)\n\tat org.apache.calcite.sql2rel.SqlToRelConverter.convertFrom(SqlToRelConverter.java:2093)\n\tat org.apache.calcite.sql2rel.SqlToRelConverter.convertFrom(SqlToRelConverter.java:2050)\n\tat org.apache.calcite.sql2rel.SqlToRelConverter.convertSelectImpl(SqlToRelConverter.java:663)\n\tat org.apache.calcite.sql2rel.SqlToRelConverter.convertSelect(SqlToRelConverter.java:644)\n\tat org.apache.calcite.sql2rel.SqlToRelConverter.convertQueryRecursive(SqlToRelConverter.java:3438)\n\tat org.apache.calcite.sql2rel.SqlToRelConverter.convertQuery(SqlToRelConverter.java:570)\n\tat org.apache.flink.table.planner.calcite.FlinkPlannerImpl.org$apache$flink$table$planner$calcite$FlinkPlannerImpl$$rel(FlinkPlannerImpl.scala:197)\n\tat org.apache.flink.table.planner.calcite.FlinkPlannerImpl.rel(FlinkPlannerImpl.scala:189)\n\tat org.apache.flink.table.planner.operations.SqlToOperationConverter.toQueryOperation(SqlToOperationConverter.java:1240)\n\tat org.apache.flink.table.planner.operations.SqlToOperationConverter.convertSqlQuery(SqlToOperationConverter.java:1188)\n\tat org.apache.flink.table.planner.operations.SqlToOperationConverter.convertValidatedSqlNode(SqlToOperationConverter.java:345)\n\tat org.apache.flink.table.planner.operations.SqlToOperationConverter.convert(SqlToOperationConverter.java:238)\n\tat org.apache.flink.table.planner.delegation.ParserImpl.parse(ParserImpl.java:105)\n\tat org.apache.zeppelin.flink.Flink115SqlInterpreter.runSqlList(Flink115SqlInterpreter.java:228)\n\tat org.apache.zeppelin.flink.Flink115Shims.runSqlList(Flink115Shims.java:315)\n\tat org.apache.zeppelin.flink.FlinkStreamSqlInterpreter.runSqlList(FlinkStreamSqlInterpreter.java:103)\n\tat org.apache.zeppelin.flink.FlinkSqlInterpreter.internalInterpret(FlinkSqlInterpreter.java:63)\n\tat org.apache.zeppelin.interpreter.AbstractInterpreter.interpret(AbstractInterpreter.java:55)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.interpret(LazyOpenInterpreter.java:110)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:860)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:752)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:172)\n\tat org.apache.zeppelin.scheduler.AbstractScheduler.runJob(AbstractScheduler.java:132)\n\tat org.apache.zeppelin.scheduler.ParallelScheduler.lambda$runJobInScheduler$0(ParallelScheduler.java:46)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat java.base/java.lang.Thread.run(Thread.java:829)\n</div>\n        </div>\n    </div>\n</div>"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741342881697_721565750",
+      "id": "paragraph_1741342881697_721565750",
+      "dateCreated": "2025-03-07T10:21:21+0000",
+      "dateStarted": "2025-03-07T10:21:35+0000",
+      "dateFinished": "2025-03-07T10:21:35+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:82428"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T11:35:44+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "<console>:1: \u001b[31merror: \u001b[0m';' expected but '.' found.\n       from confluent_kafka.admin import AdminClient\n                           ^\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741340717988_493850455",
+      "id": "paragraph_1741340717988_493850455",
+      "dateCreated": "2025-03-07T09:45:17+0000",
+      "dateStarted": "2025-03-07T09:45:34+0000",
+      "dateFinished": "2025-03-07T09:45:34+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:82429"
+    },
+    {
+      "title": "Ignore this",
+      "text": "%flink.ipyflink\nfrom kafka.admin import KafkaAdminClient, NewTopic\nfrom aws_msk_iam_sasl_signer import MSKAuthTokenProvider\n\nclass MSKTokenProvider():\n    def token(self):\n        token, _ = MSKAuthTokenProvider.generate_auth_token(region)\n        return token\n\ntp = MSKTokenProvider()\n\nadmin_client = KafkaAdminClient(\n    bootstrap_servers=BROKERS,\n    security_protocol='SASL_SSL',\n    sasl_mechanism='OAUTHBEARER',\n    sasl_oauth_token_provider=tp,\n    client_id='admin-msf-studio',\n)\n\ntopic_list = []\n\n# DELETE TOPICS IF NECESSARY\nadmin_client.delete_topics([\"lazyducknotification\", \"lazyducknotification2\", \"lazyducknotification3\", \"lazyducksource\", \"lazyducksource2\", \"lazyducksource3\"])\nexisting_topics = admin_client.list_topics()\nprint(existing_topics)\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T10:16:03+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "title": true,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n\u001b[0;31mUnknownTopicOrPartitionError\u001b[0m              Traceback (most recent call last)\nCell \u001b[0;32mIn[222], line 22\u001b[0m\n\u001b[1;32m     19\u001b[0m topic_list \u001b[38;5;241m=\u001b[39m []\n\u001b[1;32m     21\u001b[0m \u001b[38;5;66;03m# DELETE TOPICS IF NECESSARY\u001b[39;00m\n\u001b[0;32m---> 22\u001b[0m \u001b[43madmin_client\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mdelete_topics\u001b[49m\u001b[43m(\u001b[49m\u001b[43m[\u001b[49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[38;5;124;43mlazyducknotification\u001b[39;49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[38;5;124;43mlazyducknotification2\u001b[39;49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[38;5;124;43mlazyducknotification3\u001b[39;49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[38;5;124;43mlazyducksource\u001b[39;49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[38;5;124;43mlazyducksource2\u001b[39;49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[38;5;124;43mlazyducksource3\u001b[39;49m\u001b[38;5;124;43m\"\u001b[39;49m\u001b[43m]\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m     23\u001b[0m existing_topics \u001b[38;5;241m=\u001b[39m admin_client\u001b[38;5;241m.\u001b[39mlist_topics()\n\u001b[1;32m     24\u001b[0m \u001b[38;5;28mprint\u001b[39m(existing_topics)\n\nFile \u001b[0;32m/opt/conda/lib/python3.8/site-packages/kafka/admin/client.py:541\u001b[0m, in \u001b[0;36mKafkaAdminClient.delete_topics\u001b[0;34m(self, topics, timeout_ms)\u001b[0m\n\u001b[1;32m    536\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m version \u001b[38;5;241m<\u001b[39m\u001b[38;5;241m=\u001b[39m \u001b[38;5;241m3\u001b[39m:\n\u001b[1;32m    537\u001b[0m     request \u001b[38;5;241m=\u001b[39m DeleteTopicsRequest[version](\n\u001b[1;32m    538\u001b[0m         topics\u001b[38;5;241m=\u001b[39mtopics,\n\u001b[1;32m    539\u001b[0m         timeout\u001b[38;5;241m=\u001b[39mtimeout_ms\n\u001b[1;32m    540\u001b[0m     )\n\u001b[0;32m--> 541\u001b[0m     response \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43m_send_request_to_controller\u001b[49m\u001b[43m(\u001b[49m\u001b[43mrequest\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m    542\u001b[0m \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[1;32m    543\u001b[0m     \u001b[38;5;28;01mraise\u001b[39;00m \u001b[38;5;167;01mNotImplementedError\u001b[39;00m(\n\u001b[1;32m    544\u001b[0m         \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mSupport for DeleteTopics v\u001b[39m\u001b[38;5;132;01m{}\u001b[39;00m\u001b[38;5;124m has not yet been added to KafkaAdminClient.\u001b[39m\u001b[38;5;124m\"\u001b[39m\n\u001b[1;32m    545\u001b[0m         \u001b[38;5;241m.\u001b[39mformat(version))\n\nFile \u001b[0;32m/opt/conda/lib/python3.8/site-packages/kafka/admin/client.py:448\u001b[0m, in \u001b[0;36mKafkaAdminClient._send_request_to_controller\u001b[0;34m(self, request)\u001b[0m\n\u001b[1;32m    446\u001b[0m         \u001b[38;5;28;01mbreak\u001b[39;00m\n\u001b[1;32m    447\u001b[0m     \u001b[38;5;28;01melif\u001b[39;00m error_type \u001b[38;5;129;01mis\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m Errors\u001b[38;5;241m.\u001b[39mNoError:\n\u001b[0;32m--> 448\u001b[0m         \u001b[38;5;28;01mraise\u001b[39;00m error_type(\n\u001b[1;32m    449\u001b[0m             \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mRequest \u001b[39m\u001b[38;5;124m'\u001b[39m\u001b[38;5;132;01m{}\u001b[39;00m\u001b[38;5;124m'\u001b[39m\u001b[38;5;124m failed with response \u001b[39m\u001b[38;5;124m'\u001b[39m\u001b[38;5;132;01m{}\u001b[39;00m\u001b[38;5;124m'\u001b[39m\u001b[38;5;124m.\u001b[39m\u001b[38;5;124m\"\u001b[39m\n\u001b[1;32m    450\u001b[0m             \u001b[38;5;241m.\u001b[39mformat(request, response))\n\u001b[1;32m    451\u001b[0m \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[1;32m    452\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m response\n\n\u001b[0;31mUnknownTopicOrPartitionError\u001b[0m: [Error 3] UnknownTopicOrPartitionError: Request 'DeleteTopicsRequest_v3(topics=['lazyducknotification', 'lazyducknotification2', 'lazyducknotification3', 'lazyducksource', 'lazyducksource2', 'lazyducksource3'], timeout=30000)' failed with response 'DeleteTopicsResponse_v3(throttle_time_ms=0, topic_error_codes=[(topic='lazyducknotification', error_code=3), (topic='lazyducknotification2', error_code=3), (topic='lazyducknotification3', error_code=3), (topic='lazyducksource', error_code=3), (topic='lazyducksource2', error_code=3), (topic='lazyducksource3', error_code=3)])'."
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591267_2108881096",
+      "id": "paragraph_1696830227177_544231261",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "dateStarted": "2025-03-07T10:16:03+0000",
+      "dateFinished": "2025-03-07T10:16:04+0000",
+      "status": "ERROR",
+      "$$hashKey": "object:82430"
+    },
+    {
+      "text": "%flink.ipyflink\n",
+      "user": "anonymous",
+      "dateUpdated": "2025-03-07T07:13:11+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/python",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1741331591267_1060692269",
+      "id": "paragraph_1697070597369_74309220",
+      "dateCreated": "2025-03-07T07:13:11+0000",
+      "status": "READY",
+      "$$hashKey": "object:82431"
+    }
+  ],
+  "name": "LazyDuckKafkaSProducer",
+  "id": "2KQ92K8NQ",
+  "defaultInterpreterGroup": "flink",
+  "version": "0.10.1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/LazyDuckKafkaSProducer"
+}
