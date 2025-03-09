@@ -1,0 +1,37 @@
+{
+  "description": "Aggregated real-time features for each user, updated via streaming ingestion",
+  "features": [
+    {
+      "name": "user_id",
+      "type": "bigint",
+      "description": "Unique identifier for the user"
+    },
+    {
+      "name": "clicks_last_5m",
+      "type": "bigint",
+      "description": "Number of clicks on products in the last 5 minutes"
+    },
+    {
+      "name": "page_views_last_5m",
+      "type": "bigint",
+      "description": "Number of page views in the last 5 minutes"
+    },
+    {
+      "name": "orders_last_5m",
+      "type": "bigint",
+      "description": "Number of orders placed in the last 5 minutes"
+    },
+    {
+      "name": "event_time",
+      "type": "double",
+      "description": "Timestamp of the metric event (epoch time in seconds)"
+    }
+  ],
+  "record_identifier_feature_name": "user_id",
+  "event_time_feature_name": "event_time",
+  "tags": [
+    {"Key": "Environment", "Value": "DEV"},
+    {"Key": "IngestionType", "Value": "Streaming"},
+    {"Key": "CostCenter", "Value": "UserOrders"}
+  ]
+}

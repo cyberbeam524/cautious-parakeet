@@ -1,0 +1,37 @@
+{
+  "description": "Aggregated batch features for each user, updated via batch processing",
+  "features": [
+    {
+      "name": "user_id",
+      "type": "bigint",
+      "description": "Unique identifier for the user"
+    },
+    {
+      "name": "total_orders_last_1w",
+      "type": "bigint",
+      "description": "Total number of orders placed by the user in the last 1 week"
+    },
+    {
+      "name": "avg_order_value_last_1w",
+      "type": "double",
+      "description": "Average order value for the user over the last 1 week"
+    },
+    {
+      "name": "total_interaction_value_last_1w",
+      "type": "double",
+      "description": "Aggregate interaction score (e.g., weighted sum of clicks, views, etc.) over the last 1 week"
+    },
+    {
+      "name": "event_time",
+      "type": "double",
+      "description": "Timestamp of the batch aggregation event (epoch time in seconds)"
+    }
+  ],
+  "record_identifier_feature_name": "user_id",
+  "event_time_feature_name": "event_time",
+  "tags": [
+    {"Key": "Environment", "Value": "DEV"},
+    {"Key": "IngestionType", "Value": "Batch"},
+    {"Key": "CostCenter", "Value": "UserOrders"}
+  ]
+}
